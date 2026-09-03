@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Domain Baseline Claim",
+  "type": "object",
+  "required": ["baseline_id", "domain", "claim", "provenance_status", "confidence"],
+  "properties": {
+    "baseline_id": {"type": "string"},
+    "domain": {"type": "string"},
+    "claim": {"type": "string"},
+    "provenance_status": {
+      "enum": ["source_backed", "user_provided", "model_knowledge_unverified"]
+    },
+    "confidence": {"enum": ["high", "medium", "low", "unknown"]},
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title", "url", "inspection_status"],
+        "properties": {
+          "title": {"type": "string"},
+          "url": {"type": "string"},
+          "stable_locator": {"type": ["string", "null"]},
+          "inspection_status": {"enum": ["metadata_only", "partial", "inspected", "user_provided"]},
+          "notes": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "applicability": {"type": "string"},
+    "notes": {"type": "string"}
+  },
+  "additionalProperties": true
+}
