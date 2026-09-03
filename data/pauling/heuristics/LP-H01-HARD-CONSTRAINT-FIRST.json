@@ -2,27 +2,40 @@
   "heuristic_id": "LP-H01-HARD-CONSTRAINT-FIRST",
   "name": "Hard-constraint-first model reduction",
   "status": "provisional",
-  "decision_structure": "A complex system admits many global explanations, but a small set of high-confidence local constraints can sharply reduce admissible models.",
-  "rule": "When the local constraints are independently well established, lock them before optimizing the global explanation; when those constraints are uncertain or the model begins violating basic constraints, lower confidence and seek discriminating evidence before committing.",
+  "decision_structure": "A complex system admits many global explanations, but a small set of independently established local constraints can sharply reduce the admissible model space. The same strategy becomes dangerous when a model is preserved by bending or ignoring constraints that should instead falsify it.",
+  "rule": "Lock only constraints whose reliability is independently high. Generate global models inside those constraints, and treat persistent violations of basic local constraints as evidence against the topology rather than as cosmetic imperfections. When discriminating data are weak, delay strong commitment and seek evidence capable of deciding among models.",
   "operational_actions": [
-    "List constraints whose uncertainty is materially lower than the rest of the model.",
-    "Freeze only the constraints with independent support.",
-    "Generate candidate models under those constraints.",
-    "Actively inspect each candidate for violations of basic local constraints.",
-    "Delay commitment when key constraints depend on low-resolution or incomplete evidence."
+    "Separate hard constraints from merely popular, convenient or low-resolution empirical regularities.",
+    "List the uncertainty and provenance of every constraint before model construction.",
+    "Freeze only constraints with independent support and lower uncertainty than the rest of the model.",
+    "Generate candidate models under those constraints instead of optimizing global elegance first.",
+    "Run a constraint-violation audit: steric, charge, measurement, logical or identification constraints depending on the field.",
+    "If a model repeatedly violates a hard constraint, change or abandon the topology before adding more free parameters.",
+    "If an external empirical regularity conflicts with otherwise strong local constraints, test whether that regularity is truly local/universal before deforming the model to fit it.",
+    "Delay strong claims when available evidence cannot discriminate among several precise models."
   ],
   "supporting_episodes": ["LP-1951-ALPHA-HELIX"],
   "counter_episodes": ["LP-1953-DNA-TRIPLE-HELIX"],
   "boundary_conditions": [
-    "The supposedly hard constraints must be independently reliable.",
-    "The target system must actually be constrained by comparable local rules.",
-    "Model elegance cannot override contradictory high-quality evidence."
+    "The supposedly hard constraints must be independently reliable rather than inherited from convention.",
+    "The target problem must actually contain constraints structurally analogous to those in the source episode.",
+    "A successful model in one domain does not license transferring its substantive chemistry/physics into another domain.",
+    "Model elegance, symmetry or narrative coherence cannot override contradictory high-quality evidence."
   ],
   "failure_signals": [
-    "A candidate requires ignoring a basic chemical/measurement constraint.",
-    "Key parameters are being chosen mainly to preserve global elegance.",
-    "Available data are too weak to discriminate among several precise models."
+    "A candidate requires repeated violation or deformation of a basic local constraint.",
+    "Key parameters are chosen mainly to preserve the preferred global topology.",
+    "The model is described as precise while the evidence needed to discriminate it has not been collected or analyzed.",
+    "Known anomalies are repeatedly relabeled as details to be refined later.",
+    "A low-resolution empirical pattern is treated as a universal hard constraint without testing its scope."
   ],
   "evidence_class": "CROSS_SOURCE_SYNTHESIS",
-  "notes": "Provisional until the alpha-helix and DNA episodes are upgraded with contemporaneous primary-source locators."
+  "validation_record": {
+    "positive_case": "LP-1951-ALPHA-HELIX",
+    "negative_case": "LP-1953-DNA-TRIPLE-HELIX",
+    "positive_case_evidence": "1951 primary publication + Pauling first-person oral history + OSU archival reconstruction",
+    "negative_case_evidence": "1953 primary publication + OSU archival reconstruction + Peter Pauling participant retrospective",
+    "remaining_blocker": "Direct inspection of contemporaneous 1948 alpha-helix notes/drawings and late-1952 DNA notebooks/correspondence is still incomplete."
+  },
+  "notes": "Golden Set v0.2 strengthens the heuristic with an explicit success/failure contrast. It remains provisional rather than validated because the most important process-level contemporaneous archive objects have not yet been directly inspected."
 }
