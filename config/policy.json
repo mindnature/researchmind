@@ -1,0 +1,56 @@
+{
+  "version": "0.5",
+  "default_lens_family": "scientific_judgment",
+  "lens_families": {
+    "scientific_judgment": {
+      "episode_types": [
+        "scientific_decision",
+        "problem_framing",
+        "method_choice",
+        "anomaly_response",
+        "theory_revision"
+      ]
+    },
+    "methodological_stance": {
+      "episode_types": [
+        "methodological_stance",
+        "paradigm_shift_advocacy",
+        "theory_revision",
+        "research_program_strategy"
+      ]
+    },
+    "research_strategy": {
+      "episode_types": [
+        "research_program_strategy",
+        "paradigm_shift_advocacy"
+      ]
+    }
+  },
+  "excluded_episode_types": [
+    "career_decision",
+    "institution_building",
+    "field_outcome"
+  ],
+  "routing": {
+    "active_lens": {"destination": "scholar_lens"},
+    "experimental_lens": {"destination": "experimental_lens"},
+    "generic_absorbed": {"destination": "domain_baseline_candidate"},
+    "excluded": {"destination": "excluded"}
+  },
+  "auto_modes": {
+    "fast-auto": {"depth": "quick"},
+    "standard-auto": {"depth": "standard"},
+    "deep-auto": {"depth": "deep"}
+  },
+  "pipeline_phases": [
+    "identity",
+    "source_discovery",
+    "domain_baseline_mapping",
+    "episode_extraction",
+    "heuristic_synthesis",
+    "specificity_routing",
+    "quality_validation",
+    "commit",
+    "build_skill"
+  ]
+}
