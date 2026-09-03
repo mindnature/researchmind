@@ -68,11 +68,11 @@ Evaluation Harness
 
 ## 安装（Codex Skill）
 
-仓库上传后可将根目录作为 Skill 安装。推荐：
+可将仓库根目录作为 Skill 安装：
 
 ```text
 使用 $skill-installer 安装：
-https://github.com/<owner>/researchmind
+https://github.com/mindnature/researchmind
 ```
 
 安装后可直接说：
