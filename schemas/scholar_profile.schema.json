@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ResearchMind Scholar Profile",
+  "type": "object",
+  "required": [
+    "canonical_name", "slug", "fields", "active_period", "major_research_programs",
+    "major_contributions", "major_collaborators", "likely_archives", "source_availability",
+    "source_availability_ceiling"
+  ],
+  "properties": {
+    "canonical_name": {"type": "string"},
+    "slug": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+    "aliases": {"type": "array", "items": {"type": "string"}},
+    "fields": {"type": "array", "items": {"type": "string"}},
+    "subfields": {"type": "array", "items": {"type": "string"}},
+    "institutions": {"type": "array", "items": {"type": "string"}},
+    "active_period": {"type": ["string", "null"]},
+    "major_research_programs": {"type": "array", "items": {"type": "string"}},
+    "major_contributions": {"type": "array", "items": {"type": "string"}},
+    "major_failures_reversals_disputes": {"type": "array", "items": {"type": "string"}},
+    "major_collaborators": {"type": "array", "items": {"type": "string"}},
+    "likely_archives": {"type": "array", "items": {"type": "string"}},
+    "source_availability": {
+      "type": "object",
+      "properties": {
+        "process_primary": {"type": "string"},
+        "publications": {"type": "string"},
+        "retrospectives": {"type": "string"},
+        "third_party_history": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "source_availability_ceiling": {
+      "enum": ["publication_only", "public_retrospective", "process_evidence", "golden_archive", "unknown"]
+    },
+    "identity_disambiguation_notes": {"type": "string"},
+    "focus": {"type": ["string", "null"]},
+    "depth": {"enum": ["quick", "standard", "deep", "golden"]}
+  },
+  "additionalProperties": true
+}
