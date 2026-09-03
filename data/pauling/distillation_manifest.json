@@ -1,16 +1,17 @@
 {
-  "manifest_version": "0.3",
+  "manifest_version": "0.4",
   "scholar": "Linus Carl Pauling",
   "slug": "pauling",
   "depth": "golden",
   "focus": "research decision heuristics",
-  "status": "evidence_pass_1",
+  "status": "v0.4_specificity_pending",
   "source_availability_ceiling": "process_evidence",
+  "distillation_grade": "B_process_informed",
   "minimum_targets": {
     "sources": "quality-driven",
     "episodes": 3,
     "contrastive_pairs": 1,
     "heuristics": 1
   },
-  "notes": "Pauling is the Golden Set example for ResearchMind. It is not a hard-coded special case in the universal workflow. Promotion to golden_archive remains blocked by unresolved contemporaneous primary objects listed in PRIMARY_SOURCE_QUEUE.md."
+  "notes": "Pauling is the Golden Set reference dataset. Core Episodes are typed as scientific decisions. Existing heuristics remain candidate/provisional until both primary-source blockers and v0.4 Scholar Specificity Gate tests are resolved."
 }
