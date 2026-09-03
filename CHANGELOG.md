@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.5.0-adaptive-distillation-auto-orchestration
+
+- Replaced hard scholar-specificity blocking with adaptive soft routing.
+- Kept heuristic evidence maturity (`candidate/provisional/validated/rejected`) separate from lens routing.
+- Added routing states: `active_lens`, `experimental_lens`, `generic_absorbed`, `excluded`.
+- Added three Lens Families: `scientific_judgment`, `methodological_stance`, and `research_strategy`.
+- Added `methodological_stance` and `paradigm_shift_advocacy` Episode types for sparse modern-scholar archives.
+- Added Error / Warning / Info quality semantics: only evidence-integrity errors block atomic commit.
+- Added `quality-report` and `route-heuristics` CLI commands.
+- Kept `epistemic-validate` as a backward-compatible blocking-error check; warnings no longer fail the pipeline.
+- Added source-backed Domain Baseline Provider protocol and `schemas/domain_baseline.schema.json`.
+- Added agent-driven `auto-distill`, `pipeline-status`, and `advance-pipeline` commands.
+- Added persistent `pipeline.json` state for resumable multi-Agent workflows.
+- Added `schemas/pipeline.schema.json`.
+- Centralized machine-executable policy in `config/policy.json` to reduce Policy Drift.
+- Refactored CLI internals into `runtime/core.py`, `runtime/policy.py`, and `runtime/pipeline.py`.
+- Added adaptive-routing, warning-tolerant transaction, policy-source and auto-pipeline unit tests.
+- Updated generated Advisor behavior: generic-absorbed heuristics are only Domain Baseline candidates and require target-domain grounding.
+
 ## 0.4.0-scholar-specificity-evidence-reliability
 
 - Added Scholar Specificity Gate to prevent Heuristic Laundering.
