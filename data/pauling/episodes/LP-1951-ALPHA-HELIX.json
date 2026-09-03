@@ -9,7 +9,7 @@
   "contributors": ["Caltech structural chemistry group"],
   "source_refs": [
     "LP-SRC-1951-ALPHA-PAPER",
-    "LP-SRC-1983-PAULING-ORAL-HISTORY",
+    "LP-SRC-1984-PAULING-ORAL-HISTORY",
     "LP-SRC-2011-OSU-ALPHA-ARCHIVAL",
     "LP-SRC-OSU-PROTEINS",
     "LP-SRC-1954-NOBEL-LECTURE"
@@ -46,5 +46,5 @@
   ],
   "evidence_strength": "medium",
   "needs_primary_source_review": true,
-  "notes": "Golden Set v0.2: the primary 1951 publication and Pauling oral history are now inspected, and the 5.1/5.4 A discrepancy is anchored in OSU archival synthesis. Still requires direct inspection of contemporaneous 1948 notes/drawings/correspondence before upgrading to high confidence."
+  "notes": "Golden Set v0.2: the primary 1951 publication and Pauling's 10 May 1984 Caltech oral history are now inspected, and the 5.1/5.4 A discrepancy is anchored in OSU archival synthesis. Still requires direct inspection of contemporaneous 1948 notes/drawings/correspondence before upgrading to high confidence."
 }
