@@ -13,9 +13,18 @@
     "title": {"type": "string"},
     "episode_type": {
       "enum": [
-        "scientific_decision", "problem_framing", "method_choice", "anomaly_response",
-        "theory_revision", "career_decision", "research_program_strategy",
-        "institution_building", "field_outcome", "legacy_unspecified"
+        "scientific_decision",
+        "problem_framing",
+        "method_choice",
+        "anomaly_response",
+        "theory_revision",
+        "methodological_stance",
+        "paradigm_shift_advocacy",
+        "research_program_strategy",
+        "career_decision",
+        "institution_building",
+        "field_outcome",
+        "legacy_unspecified"
       ]
     },
     "decision_date": {"type": ["string", "null"]},
@@ -36,5 +45,6 @@
     "evidence_strength": {"enum": ["high", "medium", "low", "unknown"]},
     "needs_primary_source_review": {"type": "boolean"},
     "notes": {"type": "string"}
-  }
+  },
+  "additionalProperties": true
 }
