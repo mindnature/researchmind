@@ -16,10 +16,32 @@
     "source_class": "B",
     "year": 1951,
     "authors": ["Linus Pauling", "Robert B. Corey", "H. R. Branson"],
-    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1063337/",
-    "stable_locator": "PNAS 37(4):205-211; DOI 10.1073/pnas.37.4.205",
-    "inspection_status": "partial",
-    "notes": "Publication metadata verified; full episode still requires primary-source line/page review and contemporaneous notebook/correspondence linkage."
+    "url": "https://authors.library.caltech.edu/records/v4zz4-cqd29",
+    "stable_locator": "PNAS 37(4):205-211; DOI 10.1073/pnas.37.4.205; CaltechAUTHORS:PAUpnas51h",
+    "inspection_status": "inspected",
+    "notes": "Primary publication inspected through CaltechAUTHORS. The paper explicitly states that the group accumulated accurate crystal-structure information on amino acids/peptides to obtain interatomic distances, bond angles and configurational parameters, then used those constraints to construct hydrogen-bonded helices."
+  },
+  {
+    "source_id": "LP-SRC-1983-PAULING-ORAL-HISTORY",
+    "title": "Linus Pauling Oral History Interview",
+    "source_class": "C",
+    "year": 1983,
+    "authors": ["Linus Pauling", "David Greenberg"],
+    "url": "https://digital.archives.caltech.edu/collections/OralHistories/OH_Pauling_L/",
+    "stable_locator": "Caltech Oral Histories, resolver CaltechOH:OH_Pauling_L; transcript around Pauling-23 discusses the alpha helix",
+    "inspection_status": "inspected",
+    "notes": "First-person retrospective evidence. Pauling states that he should have found the alpha helix in 1937 and reflects on the role of sustained thinking and effort. Retrospective testimony is not treated as contemporaneous evidence."
+  },
+  {
+    "source_id": "LP-SRC-2011-OSU-ALPHA-ARCHIVAL",
+    "title": "The Alpha Helix",
+    "source_class": "D",
+    "year": 2011,
+    "authors": ["Oregon State University Libraries SCARC"],
+    "url": "https://paulingblog.wordpress.com/2011/03/09/the-alpha-helix/",
+    "stable_locator": "OSU SCARC PaulingBlog, 9 March 2011",
+    "inspection_status": "inspected",
+    "notes": "Archive-based reconstruction: in March 1948 Pauling drew correct bond angles/distances on paper, folded the chain, and explored hydrogen bonding. It also records the 5.4 A model versus Astbury's 5.1 A repeat discrepancy and the later synthetic-polypeptide evidence that reduced the force of that constraint. Use as archival synthesis, not as a substitute for the original 1948 object."
   },
   {
     "source_id": "LP-SRC-OSU-PROTEINS",
@@ -30,7 +52,7 @@
     "url": "http://scarc.library.oregonstate.edu/coll/pauling/proteins/index.html",
     "stable_locator": null,
     "inspection_status": "needs_review",
-    "notes": "Documentary-history gateway with hundreds of letters, manuscripts, papers, photographs and AV material. Individual primary records must be separately registered before direct citation."
+    "notes": "Documentary-history gateway with letters, manuscripts, papers, photographs and AV material. Individual contemporaneous primary records still need direct inspection before the alpha episode can be upgraded to high confidence."
   },
   {
     "source_id": "LP-SRC-1949-SICKLE-PAPER",
@@ -39,9 +61,31 @@
     "year": 1949,
     "authors": ["Linus Pauling", "Harvey A. Itano", "S. J. Singer", "Ibert C. Wells"],
     "url": "https://authors.library.caltech.edu/records/ffg43-mm633",
-    "stable_locator": "Science 110(2865):543-548; DOI 10.1126/science.110.2865.543",
+    "stable_locator": "Science 110(2865):543-548; DOI 10.1126/science.110.2865.543; Gates and Crellin contribution 1333",
+    "inspection_status": "inspected",
+    "notes": "Primary team-authored publication. Caltech metadata confirms the four authors and identifies physicians who supplied blood samples. Do not attribute the experimental program solely to Pauling."
+  },
+  {
+    "source_id": "LP-SRC-1948-ITANO-REPORT-LOCATOR",
+    "title": "Harvey A. Itano, Research Report for Admission to Candidacy",
+    "source_class": "A",
+    "year": 1948,
+    "authors": ["Harvey A. Itano"],
+    "url": "https://scarc.library.oregonstate.edu/coll/pauling/",
+    "stable_locator": "Ava Helen and Linus Pauling Papers, I: Individual Correspondence, Harvey A. Itano; Research Report for Admission to Candidacy, April 1948, p.10",
+    "inspection_status": "needs_review",
+    "notes": "Primary-process document identified through archival scholarship but not yet directly opened in this build. Secondary transcription reports that Itano proposed a complete electrophoretic study of normal hemoglobin as a comparison basis for sickle-cell hemoglobin. Do not quote as DIRECT_EVIDENCE until the archival object is inspected."
+  },
+  {
+    "source_id": "LP-SRC-2003-GORMLEY-SICKLE-HISTORY",
+    "title": "It's in the Blood: The Varieties of Linus Pauling's Work on Hemoglobin and Sickle Cell Anemia",
+    "source_class": "D",
+    "year": 2003,
+    "authors": ["Melinda Gormley"],
+    "url": "https://scarc.library.oregonstate.edu/coll/pauling/blood/thesis.pdf",
+    "stable_locator": "OSU M.S. thesis, Chapter 2; discussion of Itano electrophoresis work and archival footnotes around pp. 64-66 of the PDF text extraction",
     "inspection_status": "partial",
-    "notes": "Team-authored paper. Do not attribute the experimental program solely to Pauling."
+    "notes": "Archive-based secondary reconstruction. It identifies the Itano research report, Itano dissertation, and Pauling-Burch correspondence as underlying primary records, and describes Singer/Itano electrophoresis work in summer 1948."
   },
   {
     "source_id": "LP-SRC-1953-DNA-PAPER",
@@ -50,9 +94,31 @@
     "year": 1953,
     "authors": ["Linus Pauling", "Robert B. Corey"],
     "url": "https://pubmed.ncbi.nlm.nih.gov/16578429/",
-    "stable_locator": "PNAS 39(2):84-97; DOI 10.1073/pnas.39.2.84",
-    "inspection_status": "partial",
-    "notes": "Published proposed triple-chain model. Pair with OSU contemporaneous notes/correspondence before inferring the decision process."
+    "stable_locator": "PNAS 39(2):84-97; DOI 10.1073/pnas.39.2.84; PMCID PMC1063734",
+    "inspection_status": "inspected",
+    "notes": "Primary publication inspected through indexed full-text copies. The paper calls the model promising and precisely specified, while explicitly stating that detailed intensity calculations had not yet been made and that the structure could not be considered proved correct."
+  },
+  {
+    "source_id": "LP-SRC-2009-OSU-DNA-ARCHIVAL",
+    "title": "The Pauling-Corey Structure of DNA",
+    "source_class": "D",
+    "year": 2009,
+    "authors": ["Oregon State University Libraries SCARC"],
+    "url": "https://paulingblog.wordpress.com/2009/04/28/the-pauling-corey-structure-of-dna/",
+    "stable_locator": "OSU SCARC PaulingBlog, 28 April 2009",
+    "inspection_status": "inspected",
+    "notes": "Archive-based reconstruction of the late-1952 modeling process. It records limited X-ray evidence, severe core-packing difficulty, Corey's calculations showing insufficient room, and Pauling/Corey's decision to submit on 31 December 1952 despite acknowledged model tightness and incomplete fit."
+  },
+  {
+    "source_id": "LP-SRC-PETER-PAULING-DNA-INTERVIEW",
+    "title": "Linus Pauling's manuscript describing incorrect triple helix — Peter Pauling interview",
+    "source_class": "C",
+    "year": null,
+    "authors": ["Peter Pauling", "Cold Spring Harbor Laboratory DNA Learning Center"],
+    "url": "https://dnalc.cshl.edu/view/15333-Linus-Pauling-s-manuscript-describing-incorrect-triple-helix-Peter-Pauling.html",
+    "stable_locator": "DNALC.DNAi item 15333",
+    "inspection_status": "inspected",
+    "notes": "Participant retrospective account. Peter Pauling recalls that Linus lacked good information on DNA water content and diameter and later characterized the acid-state mistake as simply an error. Use as retrospective calibration, not contemporaneous proof of motive."
   },
   {
     "source_id": "LP-SRC-OSU-DNA",
@@ -63,7 +129,18 @@
     "url": "http://scarc.library.oregonstate.edu/coll/pauling/dna/index.html",
     "stable_locator": null,
     "inspection_status": "needs_review",
-    "notes": "Gateway to hundreds of original letters, lab notes, photographs and manuscripts; direct primary objects must be separately registered."
+    "notes": "Gateway to original letters, lab notes, photographs and manuscripts. Direct primary objects must be separately registered."
+  },
+  {
+    "source_id": "LP-SRC-1953-PAULING-WATSON-CRICK-LETTER",
+    "title": "Linus Pauling to James Watson and Francis Crick",
+    "source_class": "A",
+    "year": 1953,
+    "authors": ["Linus Pauling"],
+    "url": "https://scarc.library.oregonstate.edu/coll/pauling/dna/corr/sci9.001.34-lp-watsoncrick-19530327.html",
+    "stable_locator": "Pauling Papers, correspondence item sci9.001.34, 27 March 1953",
+    "inspection_status": "needs_review",
+    "notes": "Exact primary-object URL and locator recovered from the OSU documentary-history link graph, but the archive object returned an access error in this session. Do not quote it as inspected direct evidence yet."
   },
   {
     "source_id": "LP-SRC-1954-NOBEL-LECTURE",
