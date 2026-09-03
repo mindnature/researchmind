@@ -10,6 +10,9 @@
     "heuristic_id": {"type": "string"},
     "name": {"type": "string"},
     "status": {"enum": ["candidate", "provisional", "validated", "rejected"]},
+    "lens_family": {
+      "enum": ["scientific_judgment", "methodological_stance", "research_strategy"]
+    },
     "decision_structure": {"type": "string"},
     "rule": {"type": "string"},
     "operational_actions": {"type": "array", "items": {"type": "string"}},
@@ -37,6 +40,20 @@
       },
       "additionalProperties": true
     },
+    "routing": {
+      "type": "object",
+      "properties": {
+        "lens_eligibility": {
+          "enum": ["active_lens", "experimental_lens", "generic_absorbed", "excluded"]
+        },
+        "destination": {
+          "enum": ["scholar_lens", "experimental_lens", "domain_baseline_candidate", "excluded"]
+        },
+        "reason": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
     "notes": {"type": "string"}
-  }
+  },
+  "additionalProperties": true
 }
