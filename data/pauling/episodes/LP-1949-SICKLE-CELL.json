@@ -2,25 +2,48 @@
   "episode_id": "LP-1949-SICKLE-CELL",
   "scientist": "Linus Pauling",
   "title": "Sickle-cell anemia as a molecular disease",
-  "decision_date": "1946-1949",
-  "research_question": "Could the abnormal red-cell phenotype in sickle-cell anemia reflect a detectable molecular difference in hemoglobin?",
-  "context": "Team research culminating in the 1949 Science paper by Pauling, Itano, Singer and Wells.",
+  "decision_date": "1945-1949",
+  "research_question": "Could the abnormal red-cell phenotype in sickle-cell anemia reflect a measurable molecular difference in hemoglobin?",
+  "context": "A team research program initiated after Pauling encountered clinical observations about sickling and molecular alignment, then developed experimentally by Harvey Itano, S. J. Singer, Ibert C. Wells and collaborators, culminating in the 1949 Science paper.",
   "decision_owner": ["Linus Pauling", "Harvey A. Itano", "S. J. Singer", "Ibert C. Wells"],
-  "contributors": ["Caltech research team"],
-  "source_refs": ["LP-SRC-1949-SICKLE-PAPER"],
-  "known_at_the_time": [
-    "Sickling was associated with oxygen conditions and red-cell behavior.",
-    "Protein/hemoglobin physicochemical differences were experimentally testable."
+  "contributors": ["Ray D. Owen", "Edward R. Evans", "Travis Winsor", "George E. Burch", "Caltech electrophoresis group"],
+  "source_refs": [
+    "LP-SRC-1949-SICKLE-PAPER",
+    "LP-SRC-1948-ITANO-REPORT-LOCATOR",
+    "LP-SRC-2003-GORMLEY-SICKLE-HISTORY"
   ],
-  "unknown_at_the_time": ["The later amino-acid-level molecular explanation and modern genetic detail."],
-  "trigger_or_anomaly": "A striking cellular phenotype suggested that a molecular difference might be measurable rather than treated only as a descriptive disease category.",
-  "alternatives_considered": [],
-  "decision_action": "Translate a phenotypic disease difference into a testable molecular comparison of hemoglobin properties, using team-based experimental work.",
-  "observed_result": "The 1949 paper reported distinct electrophoretic behavior of hemoglobin associated with sickle-cell anemia/trait and framed the condition as a molecular disease.",
+  "known_at_the_time": [
+    "Sickling was associated with deoxygenation and a striking change in red-cell shape.",
+    "Clinical observations suggested molecular alignment or aggregation could accompany the sickling process.",
+    "Hemoglobin was a chemically tractable protein whose physicochemical properties could be compared between normal and sickle-cell samples.",
+    "Moving-boundary electrophoresis could detect differences in protein charge/mobility and was available at Caltech."
+  ],
+  "unknown_at_the_time": [
+    "The later amino-acid substitution identified by Vernon Ingram.",
+    "The modern genetic and polymerization-level mechanism of hemoglobin S.",
+    "Which experimental assay would first provide a reproducible molecular distinction between normal and sickle-cell hemoglobin."
+  ],
+  "trigger_or_anomaly": "A macroscopically visible, oxygen-dependent cellular phenotype suggested that a stable or conditional difference in hemoglobin molecules might exist and could be measured directly.",
+  "alternatives_considered": [
+    {
+      "option": "Treat the disease mainly at the cellular/clinical descriptive level.",
+      "outcome": "The Caltech program instead translated the phenotype into a molecular comparison problem."
+    },
+    {
+      "option": "Use one of several possible biochemical/physical assays proposed during Itano's exploratory work.",
+      "outcome": "Electrophoresis became especially useful because the apparatus was available, small blood samples were sufficient, and mobility provided a direct comparison of hemoglobin charge behavior."
+    }
+  ],
+  "decision_action": "Convert the observed disease phenotype into a falsifiable molecular comparison: isolate/compare hemoglobin from normal, sickle-cell anemia and trait samples, test physicochemical differences with electrophoresis, and interpret reproducible mobility differences as evidence that an inherited disease can be rooted in an abnormal protein molecule.",
+  "observed_result": "The 1949 paper reported distinct electrophoretic behavior of normal and sickle-cell hemoglobin and framed sickle-cell anemia as a molecular disease, creating a durable bridge from cellular phenotype to molecular mechanism.",
   "candidate_heuristics": ["LP-H02-CROSS-SCALE-MECHANISM"],
   "counter_episode_refs": [],
-  "alternative_interpretations": ["The experimental path and intellectual ownership were distributed across Pauling, Itano, Singer, Wells and prior clinical observations; avoid single-hero attribution."],
+  "alternative_interpretations": [
+    "The intellectual and experimental ownership was distributed: Pauling supplied a strong molecular hypothesis, while Itano and colleagues performed crucial assay selection, experimentation and interpretation.",
+    "The phrase 'molecular disease' should not erase prior clinical and biochemical observations that made the hypothesis possible.",
+    "The exact chronology of who selected electrophoresis and when is partly reconstructed from later archival scholarship; Itano's 1948 research report has been located bibliographically but not directly inspected in this build."
+  ],
   "evidence_strength": "medium",
   "needs_primary_source_review": true,
-  "notes": "MVP team-attribution example. Add contemporaneous letters/lab records before reconstructing specific who-decided-what chronology."
+  "notes": "Golden Set v0.2: team attribution is strengthened, the 1949 paper is inspected, and the archival locator for Itano's April 1948 research report is recorded. The report itself and relevant Pauling-Burch correspondence still need direct inspection before high-confidence decision chronology."
 }
