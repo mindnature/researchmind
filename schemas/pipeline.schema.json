@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ResearchMind Auto Distill Pipeline",
+  "type": "object",
+  "required": [
+    "pipeline_version", "job_id", "scholar", "slug", "mode", "depth",
+    "agent_required", "phases", "status"
+  ],
+  "properties": {
+    "pipeline_version": {"type": "string"},
+    "job_id": {"type": "string"},
+    "scholar": {"type": "string"},
+    "slug": {"type": "string"},
+    "mode": {"enum": ["fast-auto", "standard-auto", "deep-auto"]},
+    "depth": {"enum": ["quick", "standard", "deep", "golden"]},
+    "agent_required": {"type": "boolean"},
+    "agent_contract": {"type": "string"},
+    "current_phase": {"type": ["string", "null"]},
+    "status": {"enum": ["awaiting_agent", "running", "attention_required", "completed"]},
+    "phases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "status", "note"],
+        "properties": {
+          "name": {"type": "string"},
+          "status": {"enum": ["pending", "ready", "running", "completed", "warning", "skipped", "failed"]},
+          "note": {"type": "string"}
+        }
+      }
+    },
+    "created_at": {"type": "string"},
+    "updated_at": {"type": "string"}
+  },
+  "additionalProperties": true
+}
