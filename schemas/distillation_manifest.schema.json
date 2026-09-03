@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ResearchMind Distillation Manifest",
+  "type": "object",
+  "required": [
+    "manifest_version", "scholar", "slug", "depth", "status",
+    "source_availability_ceiling", "minimum_targets"
+  ],
+  "properties": {
+    "manifest_version": {"type": "string"},
+    "scholar": {"type": "string"},
+    "slug": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+    "depth": {"enum": ["quick", "standard", "deep", "golden"]},
+    "focus": {"type": ["string", "null"]},
+    "status": {"type": "string"},
+    "created_at": {"type": "string"},
+    "source_availability_ceiling": {
+      "enum": ["publication_only", "public_retrospective", "process_evidence", "golden_archive", "unknown"]
+    },
+    "minimum_targets": {"type": "object"},
+    "notes": {"type": "string"}
+  },
+  "additionalProperties": true
+}
