@@ -38,6 +38,17 @@
     "third_party_history": "extensive"
   },
   "source_availability_ceiling": "process_evidence",
+  "distillation_grade": "B_process_informed",
+  "distillation_grade_rationale": "Major publications, archival gateways, first-person retrospectives and some process-level primary records are available, but the decisive contemporaneous objects for several core Episodes are not yet directly inspected.",
+  "evidence_profile": {
+    "contemporaneous_process_coverage": "moderate",
+    "publication_coverage": "extensive",
+    "first_person_retrospective_coverage": "extensive",
+    "third_party_dependency": "medium",
+    "micro_decision_reconstruction": "medium",
+    "research_program_reconstruction": "high",
+    "notes": "Golden-set work is still upgrading key 1948-1953 process evidence; do not treat retrospective reconstruction as complete contemporaneous history."
+  },
   "identity_disambiguation_notes": "No material identity ambiguity for this corpus.",
   "focus": "research decision heuristics",
   "depth": "golden"

@@ -2,6 +2,7 @@
   "episode_id": "LP-1949-SICKLE-CELL",
   "scientist": "Linus Pauling",
   "title": "Sickle-cell anemia as a molecular disease",
+  "episode_type": "scientific_decision",
   "decision_date": "1945-1949",
   "research_question": "Could the abnormal red-cell phenotype in sickle-cell anemia reflect a measurable molecular difference in hemoglobin?",
   "context": "A team research program initiated after Pauling encountered clinical observations about sickling and molecular alignment, then developed experimentally by Harvey Itano, S. J. Singer, Ibert C. Wells and collaborators, culminating in the 1949 Science paper.",
@@ -45,5 +46,5 @@
   ],
   "evidence_strength": "medium",
   "needs_primary_source_review": true,
-  "notes": "Golden Set v0.2: team attribution is strengthened, the 1949 paper is inspected, and the archival locator for Itano's April 1948 research report is recorded. The report itself and relevant Pauling-Burch correspondence still need direct inspection before high-confidence decision chronology."
+  "notes": "Golden Set v0.4: classified as a scientific decision Episode; Itano's 1948 research report and relevant correspondence still need direct inspection for high-confidence decision chronology."
 }

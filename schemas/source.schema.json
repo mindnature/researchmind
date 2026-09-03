@@ -12,6 +12,9 @@
     "url": {"type": "string"},
     "stable_locator": {"type": ["string", "null"]},
     "inspection_status": {"enum": ["metadata_only", "partial", "inspected", "needs_review"]},
+    "claim_bearing": {"type": "boolean"},
+    "supports_episode_refs": {"type": "array", "items": {"type": "string"}},
+    "inspected_locator": {"type": ["string", "null"]},
     "notes": {"type": "string"}
   }
 }

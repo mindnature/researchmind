@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.4.0-scholar-specificity-evidence-reliability
+
+- Added Scholar Specificity Gate to prevent Heuristic Laundering.
+- Added generic-baseline overlap, scholar-specificity, framework-contamination and scholar-added-delta fields for heuristics.
+- Made specificity passage mandatory for `validated` heuristics.
+- Added Episode Type Gate to separate scientific decisions from career, institution-building and field-outcome events.
+- Added Distillation Grade: `A_archival`, `B_process_informed`, `C_retrospective`, `D_publication_based`.
+- Added scholar `evidence_profile` for process coverage, publication coverage, retrospective coverage, third-party dependency and reconstruction confidence.
+- Added three-layer Advisor protocol: `DOMAIN_BASELINE` → `SCHOLAR_LENS` → `TRANSFER_INFERENCE`.
+- Added explicit rule that generic target-domain standards must not be attached to scholar heuristic IDs.
+- Added Generic Baseline A/B, Heuristic Laundering and Framework Contamination evaluation tests.
+- Added `epistemic-validate` CLI checks beyond structural JSON validation.
+- Added discovered / inspected / claim-bearing source statistics.
+- Added claim-bearing source metadata fields to the source schema.
+- Added transactional staging workflow with atomic file writes, checkpointing, backup and rollback.
+- Added `stage-scholar`, `commit-staged`, and `abort-staged` CLI commands.
+- Added staging/specificity/three-layer advisor unit tests.
+- Upgraded Pauling profile to `B_process_informed` with an explicit evidence profile.
+
 ## 0.3.0-universal-scholar-distiller
 
 - Repositioned ResearchMind from a Pauling-centered prototype to a universal scholar Skill generator.

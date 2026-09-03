@@ -13,8 +13,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Validate all scholar datasets
+      - name: Structural validation
         run: python scripts/researchmind.py validate
+      - name: Epistemic consistency validation
+        run: python scripts/researchmind.py epistemic-validate
       - name: Show repository stats
         run: python scripts/researchmind.py stats
       - name: Run tests
