@@ -22,5 +22,14 @@
     "Cross-scale linkage relies on an untested causal bridge."
   ],
   "evidence_class": "CROSS_SOURCE_SYNTHESIS",
-  "notes": "Candidate only; requires at least one contrastive episode and better process-level primary evidence."
+  "specificity": {
+    "status": "not_tested",
+    "generic_baseline_overlap": "unknown",
+    "scholar_specificity": "unknown",
+    "framework_contamination": "unknown",
+    "scholar_added_delta": "",
+    "specificity_evidence": [],
+    "notes": "Candidate heuristic. It has not yet been shown to be distinctive to Pauling rather than a generic mechanistic-research strategy."
+  },
+  "notes": "Candidate only; requires a contrastive episode, stronger process evidence, and v0.4 specificity testing."
 }
