@@ -3,27 +3,48 @@
   "scientist": "Linus Pauling",
   "title": "Alpha-helix structural modeling",
   "decision_date": "1948-1951",
-  "research_question": "What polypeptide-chain configurations satisfy known chemical-bond geometry and hydrogen-bonding constraints?",
-  "context": "A structural chemistry problem later published with Robert B. Corey and H. R. Branson in 1951.",
+  "research_question": "What polypeptide-chain configurations satisfy the best-established local chemical geometry and hydrogen-bonding constraints?",
+  "context": "A structural chemistry program developed by Pauling and collaborators over many years, with a key paper-modeling episode in Oxford in March 1948 and formal publication with Robert B. Corey and H. R. Branson in 1951.",
   "decision_owner": ["Linus Pauling", "Robert B. Corey", "H. R. Branson"],
-  "contributors": [],
-  "source_refs": ["LP-SRC-1951-ALPHA-PAPER", "LP-SRC-OSU-PROTEINS", "LP-SRC-1954-NOBEL-LECTURE"],
+  "contributors": ["Caltech structural chemistry group"],
+  "source_refs": [
+    "LP-SRC-1951-ALPHA-PAPER",
+    "LP-SRC-1983-PAULING-ORAL-HISTORY",
+    "LP-SRC-2011-OSU-ALPHA-ARCHIVAL",
+    "LP-SRC-OSU-PROTEINS",
+    "LP-SRC-1954-NOBEL-LECTURE"
+  ],
   "known_at_the_time": [
-    "Chemical-bond lengths, angles, peptide-group geometry and hydrogen-bonding constraints could restrict admissible polypeptide structures.",
-    "X-ray diffraction evidence existed for fibrous proteins, but interpretation was incomplete."
+    "The group had accumulated accurate crystal-structure measurements of amino acids, peptides and related compounds specifically to establish interatomic distances, bond angles and other configurational parameters for polypeptide chains.",
+    "The peptide group was treated as strongly constrained and approximately planar, sharply limiting admissible local conformations.",
+    "Hydrogen bonding supplied an additional structural constraint on candidate chain configurations.",
+    "Contemporary fiber-diffraction work, especially Astbury's keratin patterns, prominently featured an approximately 5.1 A repeat that many investigators treated as a structural target."
   ],
   "unknown_at_the_time": [
+    "Whether the 5.1 A repeat was a universal local constraint on individual polypeptide-chain helices rather than a higher-order packing effect.",
     "The later breadth of alpha-helix occurrence across protein structures.",
-    "Later high-resolution structural confirmations."
+    "Later high-resolution structural confirmations and the full role of coiled-coil packing."
   ],
-  "trigger_or_anomaly": "The global protein-structure problem had many possible configurations, motivating use of strong local chemical constraints to reduce the search space.",
-  "alternatives_considered": [],
-  "decision_action": "Use known local chemical geometry and hydrogen-bonding constraints to construct precise candidate helical configurations rather than freely fitting a global shape.",
-  "observed_result": "The 1951 publication proposed hydrogen-bonded helical configurations; the alpha helix became a foundational protein structural motif.",
+  "trigger_or_anomaly": "The global protein-structure problem admitted many candidate folds, while a small set of local chemical constraints was much better established. Pauling's 1948 paper model produced a chemically plausible helix but its roughly 5.4 A pitch conflicted with the widely cited 5.1 A diffraction repeat.",
+  "alternatives_considered": [
+    {
+      "option": "Force the candidate helix to reproduce the 5.1 A repeat as an obligatory local periodicity.",
+      "outcome": "Not adopted as the controlling constraint; publication was delayed while the discrepancy remained unresolved."
+    },
+    {
+      "option": "Use broader model families that relaxed peptide-group planarity or imposed integral residues per turn.",
+      "outcome": "The Pauling-Corey-Branson approach instead privileged established chemical geometry and equivalent-residue helical construction."
+    }
+  ],
+  "decision_action": "Preserve the best-established local bond geometry and peptide-group constraints, physically explore foldable chain configurations, and search for internally hydrogen-bonded helices without forcing an integer number of residues per turn. Treat the 5.1 A mismatch as unresolved rather than deforming the local chemistry to fit it, then publish after new synthetic-polypeptide evidence weakened the claim that the 5.1 A reflection was universal.",
+  "observed_result": "The 1951 publication proposed two precise hydrogen-bonded helices, including the alpha helix. Subsequent diffraction work strongly supported the alpha-helix prediction and it became a foundational protein structural motif.",
   "candidate_heuristics": ["LP-H01-HARD-CONSTRAINT-FIRST"],
   "counter_episode_refs": ["LP-1953-DNA-TRIPLE-HELIX"],
-  "alternative_interpretations": ["The success cannot be attributed to a single heuristic alone; theoretical chemistry, collaboration, model-building skill and available experimental evidence all contributed."],
+  "alternative_interpretations": [
+    "The success cannot be attributed to a single heuristic alone; long-term crystallographic measurement, resonance theory, collaboration, physical model-building skill and later experimental evidence all contributed.",
+    "The famous 1948 paper-folding episode is partly reconstructed from retrospective testimony and archival synthesis; it should not be mistaken for a complete contemporaneous lab record."
+  ],
   "evidence_strength": "medium",
   "needs_primary_source_review": true,
-  "notes": "MVP skeleton. Before upgrading to high confidence, inspect contemporaneous notebooks/correspondence and register exact locators."
+  "notes": "Golden Set v0.2: the primary 1951 publication and Pauling oral history are now inspected, and the 5.1/5.4 A discrepancy is anchored in OSU archival synthesis. Still requires direct inspection of contemporaneous 1948 notes/drawings/correspondence before upgrading to high confidence."
 }
