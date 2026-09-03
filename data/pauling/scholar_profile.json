@@ -1,0 +1,44 @@
+{
+  "canonical_name": "Linus Carl Pauling",
+  "slug": "pauling",
+  "aliases": ["Linus Pauling", "Linus C. Pauling"],
+  "fields": ["chemistry", "structural chemistry", "molecular biology"],
+  "subfields": ["chemical bonding", "protein structure", "molecular medicine"],
+  "institutions": ["California Institute of Technology"],
+  "active_period": "1920s-1990s",
+  "major_research_programs": [
+    "chemical bonding and molecular structure",
+    "protein and polypeptide structure",
+    "molecular basis of disease",
+    "nucleic-acid structural modeling"
+  ],
+  "major_contributions": [
+    "modern theory and application of the chemical bond",
+    "alpha-helix and protein-structure modeling",
+    "sickle-cell anemia as a molecular disease"
+  ],
+  "major_failures_reversals_disputes": [
+    "1953 proposed DNA triple-chain structure"
+  ],
+  "major_collaborators": [
+    "Robert B. Corey",
+    "H. R. Branson",
+    "Harvey A. Itano",
+    "S. J. Singer",
+    "Ibert C. Wells"
+  ],
+  "likely_archives": [
+    "Oregon State University Special Collections and Archives Research Center",
+    "Caltech Archives"
+  ],
+  "source_availability": {
+    "process_primary": "extensive archival holdings exist; several decisive objects still require direct inspection",
+    "publications": "extensive",
+    "retrospectives": "extensive",
+    "third_party_history": "extensive"
+  },
+  "source_availability_ceiling": "process_evidence",
+  "identity_disambiguation_notes": "No material identity ambiguity for this corpus.",
+  "focus": "research decision heuristics",
+  "depth": "golden"
+}
