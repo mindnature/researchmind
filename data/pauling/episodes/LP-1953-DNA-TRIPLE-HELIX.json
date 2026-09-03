@@ -4,27 +4,49 @@
   "title": "DNA triple-chain model failure",
   "decision_date": "1952-1953",
   "research_question": "What precise molecular structure could explain nucleic acids using available chemical knowledge and X-ray information?",
-  "context": "Pauling and Corey published a precise three-chain nucleic-acid structure in February 1953; the model was soon shown to be incorrect.",
+  "context": "Pauling and Corey made a serious late-1952 attempt to solve DNA under competitive timing and limited access to high-quality diffraction evidence, submitting a precise three-chain model on 31 December 1952 and publishing it in February 1953.",
   "decision_owner": ["Linus Pauling", "Robert B. Corey"],
-  "contributors": [],
-  "source_refs": ["LP-SRC-1953-DNA-PAPER", "LP-SRC-OSU-DNA"],
+  "contributors": ["Caltech colleagues consulted during model development"],
+  "source_refs": [
+    "LP-SRC-1953-DNA-PAPER",
+    "LP-SRC-2009-OSU-DNA-ARCHIVAL",
+    "LP-SRC-PETER-PAULING-DNA-INTERVIEW",
+    "LP-SRC-OSU-DNA",
+    "LP-SRC-1953-PAULING-WATSON-CRICK-LETTER"
+  ],
   "known_at_the_time": [
-    "Nucleic acids contained phosphate, sugar and bases.",
-    "Available X-ray photographs constrained but did not uniquely determine the structure.",
-    "The proposed structure was precise enough to state atomic coordinates and compare with evidence."
+    "Nucleic acids contained repeating phosphate, sugar and base components and were increasingly understood to be biologically important.",
+    "The available X-ray information constrained the molecule but did not uniquely determine a precise structure; Pauling did not possess the decisive high-quality King's College evidence used by Watson and Crick.",
+    "The proposed model placed three polynucleotide chains around a central phosphate-rich core and was precise enough to specify atomic coordinates.",
+    "Pauling and Corey themselves described the structure as promising but extraordinarily tight, and the paper explicitly stated that detailed intensity calculations had not yet been made and that correctness had not been proved.",
+    "Corey's detailed atomic-position work and model manipulation exposed severe crowding in the proposed core before publication."
   ],
   "unknown_at_the_time": [
     "The Watson-Crick double-helix solution and its later validation.",
-    "The full quality and implications of evidence that became decisive in the successful model."
+    "The full implications of Rosalind Franklin and Raymond Gosling's high-quality diffraction evidence, including hydration-dependent structural information not available to Pauling during the model's construction.",
+    "Whether a chemically and sterically satisfactory central-phosphate arrangement could be achieved without changing the basic model topology."
   ],
-  "trigger_or_anomaly": "A race to formulate a precise nucleic-acid structure under incomplete evidence.",
-  "alternatives_considered": [],
-  "decision_action": "Construct and publish a precise triple-chain structural model from general molecular-structure principles and the available nucleic-acid information, while acknowledging that detailed intensity calculations had not proved it correct.",
-  "observed_result": "The proposed three-chain structure was incorrect and provides a counter-case for structural model building when decisive constraints or data checks are missing or violated.",
+  "trigger_or_anomaly": "A high-value structural problem was being pursued under incomplete evidence and competitive timing. The model repeatedly produced core-packing difficulties, yet these difficulties were treated as refinable details rather than as possible falsifiers of the overall topology.",
+  "alternatives_considered": [
+    {
+      "option": "Reject or substantially redesign the three-chain, phosphate-in-core topology when severe crowding persisted.",
+      "outcome": "Not adopted before submission; the model was repeatedly adjusted instead."
+    },
+    {
+      "option": "Delay publication until detailed X-ray intensity calculations or better diffraction data discriminated among topologies.",
+      "outcome": "Not adopted; the paper was submitted while explicitly acknowledging that detailed intensity calculations had not been completed."
+    }
+  ],
+  "decision_action": "Construct a precise triple-chain model using general molecular-structure principles and limited X-ray information, repeatedly adjust the crowded phosphate core to obtain a workable geometry, and publish the model while treating remaining packing/data-fit problems as refinements rather than decisive reasons to abandon the topology.",
+  "observed_result": "The model was incorrect. The central-phosphate arrangement contained serious chemical/steric problems, and better evidence plus the Watson-Crick model displaced it within months. Pauling subsequently accepted that the double helix was the superior structure.",
   "candidate_heuristics": ["LP-H01-HARD-CONSTRAINT-FIRST"],
   "counter_episode_refs": ["LP-1951-ALPHA-HELIX"],
-  "alternative_interpretations": ["Failure should not be reduced to a single personality flaw; data access, competitive timing, model assumptions and chemical constraints all require separate historical review."],
+  "alternative_interpretations": [
+    "The failure should not be reduced to overconfidence alone: limited data access, research prioritization, competitive timing, chemical assumptions and model-building choices interacted.",
+    "Claims about exact motives for publication priority are supported mainly by later historical reconstruction and should not be treated as direct self-report unless contemporaneous correspondence is inspected.",
+    "Peter Pauling's account of missing water-content and diameter information is retrospective participant testimony, not a contemporaneous notebook entry."
+  ],
   "evidence_strength": "medium",
   "needs_primary_source_review": true,
-  "notes": "Do not state exact causes such as specific missing measurements until contemporaneous primary records are inspected."
+  "notes": "Golden Set v0.2: the primary 1953 paper is inspected and its own uncertainty statements are now explicit; OSU archival synthesis and Peter Pauling's participant account calibrate the decision process. Direct inspection of late-November/December 1952 notebooks and correspondence is still required before high-confidence causal attribution."
 }
