@@ -2,6 +2,7 @@
   "episode_id": "LP-1953-DNA-TRIPLE-HELIX",
   "scientist": "Linus Pauling",
   "title": "DNA triple-chain model failure",
+  "episode_type": "scientific_decision",
   "decision_date": "1952-1953",
   "research_question": "What precise molecular structure could explain nucleic acids using available chemical knowledge and X-ray information?",
   "context": "Pauling and Corey made a serious late-1952 attempt to solve DNA under competitive timing and limited access to high-quality diffraction evidence, submitting a precise three-chain model on 31 December 1952 and publishing it in February 1953.",
@@ -48,5 +49,5 @@
   ],
   "evidence_strength": "medium",
   "needs_primary_source_review": true,
-  "notes": "Golden Set v0.2: the primary 1953 paper is inspected and its own uncertainty statements are now explicit; OSU archival synthesis and Peter Pauling's participant account calibrate the decision process. Direct inspection of late-November/December 1952 notebooks and correspondence is still required before high-confidence causal attribution."
+  "notes": "Golden Set v0.4: classified as a scientific decision Episode; direct inspection of late-November/December 1952 notebooks and correspondence is still required before high-confidence causal attribution."
 }
