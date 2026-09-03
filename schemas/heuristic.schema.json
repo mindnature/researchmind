@@ -18,6 +18,25 @@
     "boundary_conditions": {"type": "array", "items": {"type": "string"}},
     "failure_signals": {"type": "array", "items": {"type": "string"}},
     "evidence_class": {"enum": ["DIRECT_EVIDENCE", "CROSS_SOURCE_SYNTHESIS"]},
+    "specificity": {
+      "type": "object",
+      "required": [
+        "status", "generic_baseline_overlap", "scholar_specificity",
+        "framework_contamination", "scholar_added_delta", "specificity_evidence"
+      ],
+      "properties": {
+        "status": {"enum": ["not_tested", "pass", "review", "reject"]},
+        "generic_baseline_overlap": {"enum": ["low", "medium", "high", "unknown"]},
+        "scholar_specificity": {"enum": ["low", "medium", "high", "unknown"]},
+        "framework_contamination": {"enum": ["low", "medium", "high", "unknown"]},
+        "scholar_added_delta": {"type": "string"},
+        "specificity_evidence": {"type": "array", "items": {"type": "string"}},
+        "generic_baseline_comparison": {"type": "string"},
+        "other_scholar_overlap": {"type": "string"},
+        "notes": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
     "notes": {"type": "string"}
   }
 }
