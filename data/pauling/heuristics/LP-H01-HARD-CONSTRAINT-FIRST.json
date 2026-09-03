@@ -30,6 +30,15 @@
     "A low-resolution empirical pattern is treated as a universal hard constraint without testing its scope."
   ],
   "evidence_class": "CROSS_SOURCE_SYNTHESIS",
+  "specificity": {
+    "status": "not_tested",
+    "generic_baseline_overlap": "unknown",
+    "scholar_specificity": "unknown",
+    "framework_contamination": "unknown",
+    "scholar_added_delta": "",
+    "specificity_evidence": [],
+    "notes": "Legacy Golden Set heuristic. Must undergo v0.4 Generic Baseline A/B and framework-contamination testing before any claim that it is distinctive to Pauling."
+  },
   "validation_record": {
     "positive_case": "LP-1951-ALPHA-HELIX",
     "negative_case": "LP-1953-DNA-TRIPLE-HELIX",
@@ -37,5 +46,5 @@
     "negative_case_evidence": "1953 primary publication + OSU archival reconstruction + Peter Pauling participant retrospective",
     "remaining_blocker": "Direct inspection of contemporaneous 1948 alpha-helix notes/drawings and late-1952 DNA notebooks/correspondence is still incomplete."
   },
-  "notes": "Golden Set v0.2 strengthens the heuristic with an explicit success/failure contrast. It remains provisional rather than validated because the most important process-level contemporaneous archive objects have not yet been directly inspected."
+  "notes": "Golden Set v0.2 strengthens the heuristic with an explicit success/failure contrast. It remains provisional and has not yet passed the v0.4 Scholar Specificity Gate."
 }
