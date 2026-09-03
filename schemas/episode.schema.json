@@ -11,6 +11,13 @@
     "episode_id": {"type": "string"},
     "scientist": {"type": "string"},
     "title": {"type": "string"},
+    "episode_type": {
+      "enum": [
+        "scientific_decision", "problem_framing", "method_choice", "anomaly_response",
+        "theory_revision", "career_decision", "research_program_strategy",
+        "institution_building", "field_outcome", "legacy_unspecified"
+      ]
+    },
     "decision_date": {"type": ["string", "null"]},
     "research_question": {"type": "string"},
     "context": {"type": "string"},
