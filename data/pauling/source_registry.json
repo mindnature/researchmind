@@ -22,15 +22,15 @@
     "notes": "Primary publication inspected through CaltechAUTHORS. The paper explicitly states that the group accumulated accurate crystal-structure information on amino acids/peptides to obtain interatomic distances, bond angles and configurational parameters, then used those constraints to construct hydrogen-bonded helices."
   },
   {
-    "source_id": "LP-SRC-1983-PAULING-ORAL-HISTORY",
+    "source_id": "LP-SRC-1984-PAULING-ORAL-HISTORY",
     "title": "Linus Pauling Oral History Interview",
     "source_class": "C",
-    "year": 1983,
-    "authors": ["Linus Pauling", "David Greenberg"],
+    "year": 1984,
+    "authors": ["Linus Pauling", "John L. Greenberg"],
     "url": "https://digital.archives.caltech.edu/collections/OralHistories/OH_Pauling_L/",
-    "stable_locator": "Caltech Oral Histories, resolver CaltechOH:OH_Pauling_L; transcript around Pauling-23 discusses the alpha helix",
+    "stable_locator": "Caltech Oral Histories, interview 10 May 1984; resolver CaltechOH:OH_Pauling_L",
     "inspection_status": "inspected",
-    "notes": "First-person retrospective evidence. Pauling states that he should have found the alpha helix in 1937 and reflects on the role of sustained thinking and effort. Retrospective testimony is not treated as contemporaneous evidence."
+    "notes": "First-person retrospective evidence. Pauling reflects on the alpha helix, including that he believed he could have found it earlier if he had concentrated enough effort on the problem. Retrospective testimony is not treated as contemporaneous evidence."
   },
   {
     "source_id": "LP-SRC-2011-OSU-ALPHA-ARCHIVAL",
