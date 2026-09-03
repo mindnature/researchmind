@@ -1,0 +1,30 @@
+{
+  "episode_id": "LP-1953-DNA-TRIPLE-HELIX",
+  "scientist": "Linus Pauling",
+  "title": "DNA triple-chain model failure",
+  "decision_date": "1952-1953",
+  "research_question": "What precise molecular structure could explain nucleic acids using available chemical knowledge and X-ray information?",
+  "context": "Pauling and Corey published a precise three-chain nucleic-acid structure in February 1953; the model was soon shown to be incorrect.",
+  "decision_owner": ["Linus Pauling", "Robert B. Corey"],
+  "contributors": [],
+  "source_refs": ["LP-SRC-1953-DNA-PAPER", "LP-SRC-OSU-DNA"],
+  "known_at_the_time": [
+    "Nucleic acids contained phosphate, sugar and bases.",
+    "Available X-ray photographs constrained but did not uniquely determine the structure.",
+    "The proposed structure was precise enough to state atomic coordinates and compare with evidence."
+  ],
+  "unknown_at_the_time": [
+    "The Watson-Crick double-helix solution and its later validation.",
+    "The full quality and implications of evidence that became decisive in the successful model."
+  ],
+  "trigger_or_anomaly": "A race to formulate a precise nucleic-acid structure under incomplete evidence.",
+  "alternatives_considered": [],
+  "decision_action": "Construct and publish a precise triple-chain structural model from general molecular-structure principles and the available nucleic-acid information, while acknowledging that detailed intensity calculations had not proved it correct.",
+  "observed_result": "The proposed three-chain structure was incorrect and provides a counter-case for structural model building when decisive constraints or data checks are missing or violated.",
+  "candidate_heuristics": ["LP-H01-HARD-CONSTRAINT-FIRST"],
+  "counter_episode_refs": ["LP-1951-ALPHA-HELIX"],
+  "alternative_interpretations": ["Failure should not be reduced to a single personality flaw; data access, competitive timing, model assumptions and chemical constraints all require separate historical review."],
+  "evidence_strength": "medium",
+  "needs_primary_source_review": true,
+  "notes": "Do not state exact causes such as specific missing measurements until contemporaneous primary records are inspected."
+}

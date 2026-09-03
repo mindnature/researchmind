@@ -1,0 +1,28 @@
+{
+  "heuristic_id": "LP-H01-HARD-CONSTRAINT-FIRST",
+  "name": "Hard-constraint-first model reduction",
+  "status": "provisional",
+  "decision_structure": "A complex system admits many global explanations, but a small set of high-confidence local constraints can sharply reduce admissible models.",
+  "rule": "When the local constraints are independently well established, lock them before optimizing the global explanation; when those constraints are uncertain or the model begins violating basic constraints, lower confidence and seek discriminating evidence before committing.",
+  "operational_actions": [
+    "List constraints whose uncertainty is materially lower than the rest of the model.",
+    "Freeze only the constraints with independent support.",
+    "Generate candidate models under those constraints.",
+    "Actively inspect each candidate for violations of basic local constraints.",
+    "Delay commitment when key constraints depend on low-resolution or incomplete evidence."
+  ],
+  "supporting_episodes": ["LP-1951-ALPHA-HELIX"],
+  "counter_episodes": ["LP-1953-DNA-TRIPLE-HELIX"],
+  "boundary_conditions": [
+    "The supposedly hard constraints must be independently reliable.",
+    "The target system must actually be constrained by comparable local rules.",
+    "Model elegance cannot override contradictory high-quality evidence."
+  ],
+  "failure_signals": [
+    "A candidate requires ignoring a basic chemical/measurement constraint.",
+    "Key parameters are being chosen mainly to preserve global elegance.",
+    "Available data are too weak to discriminate among several precise models."
+  ],
+  "evidence_class": "CROSS_SOURCE_SYNTHESIS",
+  "notes": "Provisional until the alpha-helix and DNA episodes are upgraded with contemporaneous primary-source locators."
+}

@@ -1,0 +1,26 @@
+{
+  "heuristic_id": "LP-H02-CROSS-SCALE-MECHANISM",
+  "name": "Translate a visible anomaly into a lower-level discriminating measurement",
+  "status": "candidate",
+  "decision_structure": "A robust high-level phenotype or pattern exists, but competing explanations remain observationally similar until a lower-level measurable property is compared.",
+  "rule": "Convert the macroscopic anomaly into a measurement that can discriminate among plausible lower-level mechanisms, then test whether the measured difference tracks the phenotype as predicted.",
+  "operational_actions": [
+    "Define the anomaly without embedding a preferred explanation.",
+    "Enumerate plausible lower-level mechanisms.",
+    "Choose a measurement that separates at least two mechanisms.",
+    "Check whether intermediate/heterogeneous cases behave as the mechanism predicts."
+  ],
+  "supporting_episodes": ["LP-1949-SICKLE-CELL"],
+  "counter_episodes": [],
+  "boundary_conditions": [
+    "The lower-level measurement must be linked to a plausible mechanism rather than selected post hoc.",
+    "Association at the molecular/measurement level is not automatically causal without additional design support."
+  ],
+  "failure_signals": [
+    "The proposed measurement cannot distinguish rival mechanisms.",
+    "The measurement is selected only after seeing the desired pattern.",
+    "Cross-scale linkage relies on an untested causal bridge."
+  ],
+  "evidence_class": "CROSS_SOURCE_SYNTHESIS",
+  "notes": "Candidate only; requires at least one contrastive episode and better process-level primary evidence."
+}

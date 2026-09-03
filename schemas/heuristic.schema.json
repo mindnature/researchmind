@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Research Heuristic",
+  "type": "object",
+  "required": [
+    "heuristic_id", "name", "status", "decision_structure", "rule",
+    "supporting_episodes", "boundary_conditions", "failure_signals"
+  ],
+  "properties": {
+    "heuristic_id": {"type": "string"},
+    "name": {"type": "string"},
+    "status": {"enum": ["candidate", "provisional", "validated", "rejected"]},
+    "decision_structure": {"type": "string"},
+    "rule": {"type": "string"},
+    "operational_actions": {"type": "array", "items": {"type": "string"}},
+    "supporting_episodes": {"type": "array", "items": {"type": "string"}},
+    "counter_episodes": {"type": "array", "items": {"type": "string"}},
+    "boundary_conditions": {"type": "array", "items": {"type": "string"}},
+    "failure_signals": {"type": "array", "items": {"type": "string"}},
+    "evidence_class": {"enum": ["DIRECT_EVIDENCE", "CROSS_SOURCE_SYNTHESIS"]},
+    "notes": {"type": "string"}
+  }
+}

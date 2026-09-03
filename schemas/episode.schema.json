@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Research Decision Episode",
+  "type": "object",
+  "required": [
+    "episode_id", "scientist", "title", "decision_date", "research_question",
+    "source_refs", "known_at_the_time", "unknown_at_the_time", "decision_action",
+    "observed_result", "evidence_strength", "needs_primary_source_review"
+  ],
+  "properties": {
+    "episode_id": {"type": "string"},
+    "scientist": {"type": "string"},
+    "title": {"type": "string"},
+    "decision_date": {"type": ["string", "null"]},
+    "research_question": {"type": "string"},
+    "context": {"type": "string"},
+    "decision_owner": {"type": "array", "items": {"type": "string"}},
+    "contributors": {"type": "array", "items": {"type": "string"}},
+    "source_refs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "known_at_the_time": {"type": "array", "items": {"type": "string"}},
+    "unknown_at_the_time": {"type": "array", "items": {"type": "string"}},
+    "trigger_or_anomaly": {"type": ["string", "null"]},
+    "alternatives_considered": {"type": "array", "items": {"type": "object"}},
+    "decision_action": {"type": "string"},
+    "observed_result": {"type": "string"},
+    "candidate_heuristics": {"type": "array", "items": {"type": "string"}},
+    "counter_episode_refs": {"type": "array", "items": {"type": "string"}},
+    "alternative_interpretations": {"type": "array", "items": {"type": "string"}},
+    "evidence_strength": {"enum": ["high", "medium", "low", "unknown"]},
+    "needs_primary_source_review": {"type": "boolean"},
+    "notes": {"type": "string"}
+  }
+}

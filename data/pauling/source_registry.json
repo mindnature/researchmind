@@ -1,0 +1,79 @@
+[
+  {
+    "source_id": "LP-SRC-OSU-NOTEBOOKS-OVERVIEW",
+    "title": "Digital research collection highlights Pauling celebration",
+    "source_class": "D",
+    "year": 2009,
+    "authors": ["Oregon State University Newsroom"],
+    "url": "https://news.oregonstate.edu/news/digital-research-collection-highlights-pauling-celebration",
+    "stable_locator": null,
+    "inspection_status": "inspected",
+    "notes": "Confirms 46 research notebooks, 1922-1994, about 7,500 pages, containing calculations, experimental data, conclusions and future research ideas. Use as archive map, not as primary evidence for a specific decision."
+  },
+  {
+    "source_id": "LP-SRC-1951-ALPHA-PAPER",
+    "title": "The Structure of Proteins: Two Hydrogen-Bonded Helical Configurations of the Polypeptide Chain",
+    "source_class": "B",
+    "year": 1951,
+    "authors": ["Linus Pauling", "Robert B. Corey", "H. R. Branson"],
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1063337/",
+    "stable_locator": "PNAS 37(4):205-211; DOI 10.1073/pnas.37.4.205",
+    "inspection_status": "partial",
+    "notes": "Publication metadata verified; full episode still requires primary-source line/page review and contemporaneous notebook/correspondence linkage."
+  },
+  {
+    "source_id": "LP-SRC-OSU-PROTEINS",
+    "title": "Linus Pauling and the Structure of Proteins: A Documentary History",
+    "source_class": "D",
+    "year": 2013,
+    "authors": ["Oregon State University Libraries SCARC"],
+    "url": "http://scarc.library.oregonstate.edu/coll/pauling/proteins/index.html",
+    "stable_locator": null,
+    "inspection_status": "needs_review",
+    "notes": "Documentary-history gateway with hundreds of letters, manuscripts, papers, photographs and AV material. Individual primary records must be separately registered before direct citation."
+  },
+  {
+    "source_id": "LP-SRC-1949-SICKLE-PAPER",
+    "title": "Sickle Cell Anemia, a Molecular Disease",
+    "source_class": "B",
+    "year": 1949,
+    "authors": ["Linus Pauling", "Harvey A. Itano", "S. J. Singer", "Ibert C. Wells"],
+    "url": "https://authors.library.caltech.edu/records/ffg43-mm633",
+    "stable_locator": "Science 110(2865):543-548; DOI 10.1126/science.110.2865.543",
+    "inspection_status": "partial",
+    "notes": "Team-authored paper. Do not attribute the experimental program solely to Pauling."
+  },
+  {
+    "source_id": "LP-SRC-1953-DNA-PAPER",
+    "title": "A Proposed Structure for the Nucleic Acids",
+    "source_class": "B",
+    "year": 1953,
+    "authors": ["Linus Pauling", "Robert B. Corey"],
+    "url": "https://pubmed.ncbi.nlm.nih.gov/16578429/",
+    "stable_locator": "PNAS 39(2):84-97; DOI 10.1073/pnas.39.2.84",
+    "inspection_status": "partial",
+    "notes": "Published proposed triple-chain model. Pair with OSU contemporaneous notes/correspondence before inferring the decision process."
+  },
+  {
+    "source_id": "LP-SRC-OSU-DNA",
+    "title": "Linus Pauling and the Race for DNA: A Documentary History",
+    "source_class": "D",
+    "year": 2009,
+    "authors": ["Oregon State University Libraries SCARC"],
+    "url": "http://scarc.library.oregonstate.edu/coll/pauling/dna/index.html",
+    "stable_locator": null,
+    "inspection_status": "needs_review",
+    "notes": "Gateway to hundreds of original letters, lab notes, photographs and manuscripts; direct primary objects must be separately registered."
+  },
+  {
+    "source_id": "LP-SRC-1954-NOBEL-LECTURE",
+    "title": "Modern Structural Chemistry",
+    "source_class": "C",
+    "year": 1954,
+    "authors": ["Linus Pauling"],
+    "url": "https://www.nobelprize.org/uploads/2018/06/pauling-lecture.pdf",
+    "stable_locator": "Nobel Lecture, 11 December 1954",
+    "inspection_status": "partial",
+    "notes": "Retrospective synthesis. Useful for Pauling's stated structural-chemistry framework, but not sufficient alone to reconstruct earlier decisions."
+  }
+]

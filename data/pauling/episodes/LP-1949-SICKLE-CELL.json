@@ -1,0 +1,26 @@
+{
+  "episode_id": "LP-1949-SICKLE-CELL",
+  "scientist": "Linus Pauling",
+  "title": "Sickle-cell anemia as a molecular disease",
+  "decision_date": "1946-1949",
+  "research_question": "Could the abnormal red-cell phenotype in sickle-cell anemia reflect a detectable molecular difference in hemoglobin?",
+  "context": "Team research culminating in the 1949 Science paper by Pauling, Itano, Singer and Wells.",
+  "decision_owner": ["Linus Pauling", "Harvey A. Itano", "S. J. Singer", "Ibert C. Wells"],
+  "contributors": ["Caltech research team"],
+  "source_refs": ["LP-SRC-1949-SICKLE-PAPER"],
+  "known_at_the_time": [
+    "Sickling was associated with oxygen conditions and red-cell behavior.",
+    "Protein/hemoglobin physicochemical differences were experimentally testable."
+  ],
+  "unknown_at_the_time": ["The later amino-acid-level molecular explanation and modern genetic detail."],
+  "trigger_or_anomaly": "A striking cellular phenotype suggested that a molecular difference might be measurable rather than treated only as a descriptive disease category.",
+  "alternatives_considered": [],
+  "decision_action": "Translate a phenotypic disease difference into a testable molecular comparison of hemoglobin properties, using team-based experimental work.",
+  "observed_result": "The 1949 paper reported distinct electrophoretic behavior of hemoglobin associated with sickle-cell anemia/trait and framed the condition as a molecular disease.",
+  "candidate_heuristics": ["LP-H02-CROSS-SCALE-MECHANISM"],
+  "counter_episode_refs": [],
+  "alternative_interpretations": ["The experimental path and intellectual ownership were distributed across Pauling, Itano, Singer, Wells and prior clinical observations; avoid single-hero attribution."],
+  "evidence_strength": "medium",
+  "needs_primary_source_review": true,
+  "notes": "MVP team-attribution example. Add contemporaneous letters/lab records before reconstructing specific who-decided-what chronology."
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Source Registry Item",
+  "type": "object",
+  "required": ["source_id", "title", "source_class", "url", "inspection_status"],
+  "properties": {
+    "source_id": {"type": "string"},
+    "title": {"type": "string"},
+    "source_class": {"enum": ["A", "B", "C", "D"]},
+    "year": {"type": ["integer", "null"]},
+    "authors": {"type": "array", "items": {"type": "string"}},
+    "url": {"type": "string"},
+    "stable_locator": {"type": ["string", "null"]},
+    "inspection_status": {"enum": ["metadata_only", "partial", "inspected", "needs_review"]},
+    "notes": {"type": "string"}
+  }
+}
