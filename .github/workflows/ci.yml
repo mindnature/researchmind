@@ -15,11 +15,15 @@ jobs:
           python-version: '3.12'
       - name: Structural validation
         run: python scripts/researchmind.py validate
-      - name: Epistemic consistency validation
+      - name: Adaptive quality report
+        run: python scripts/researchmind.py quality-report
+      - name: Backward-compatible epistemic validation
         run: python scripts/researchmind.py epistemic-validate
       - name: Show repository stats
         run: python scripts/researchmind.py stats
       - name: Run tests
         run: python -m unittest discover -s tests -v
+      - name: Auto-distill pipeline smoke test
+        run: python scripts/researchmind.py auto-distill "Geoffrey Hinton" --mode fast-auto
       - name: Build Pauling reference advisor
         run: python scripts/researchmind.py build-skill --scholar pauling --output /tmp/pauling-research-advisor
