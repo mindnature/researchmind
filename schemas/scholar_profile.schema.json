@@ -5,7 +5,7 @@
   "required": [
     "canonical_name", "slug", "fields", "active_period", "major_research_programs",
     "major_contributions", "major_collaborators", "likely_archives", "source_availability",
-    "source_availability_ceiling"
+    "source_availability_ceiling", "distillation_grade", "evidence_profile", "depth"
   ],
   "properties": {
     "canonical_name": {"type": "string"},
@@ -32,6 +32,28 @@
     },
     "source_availability_ceiling": {
       "enum": ["publication_only", "public_retrospective", "process_evidence", "golden_archive", "unknown"]
+    },
+    "distillation_grade": {
+      "enum": ["A_archival", "B_process_informed", "C_retrospective", "D_publication_based", "unknown"]
+    },
+    "distillation_grade_rationale": {"type": "string"},
+    "evidence_profile": {
+      "type": "object",
+      "required": [
+        "contemporaneous_process_coverage", "publication_coverage",
+        "first_person_retrospective_coverage", "third_party_dependency",
+        "micro_decision_reconstruction", "research_program_reconstruction"
+      ],
+      "properties": {
+        "contemporaneous_process_coverage": {"enum": ["none", "limited", "moderate", "extensive", "unknown"]},
+        "publication_coverage": {"enum": ["none", "limited", "moderate", "extensive", "unknown"]},
+        "first_person_retrospective_coverage": {"enum": ["none", "limited", "moderate", "extensive", "unknown"]},
+        "third_party_dependency": {"enum": ["low", "medium", "high", "unknown"]},
+        "micro_decision_reconstruction": {"enum": ["low", "medium", "high", "unknown"]},
+        "research_program_reconstruction": {"enum": ["low", "medium", "high", "unknown"]},
+        "notes": {"type": "string"}
+      },
+      "additionalProperties": true
     },
     "identity_disambiguation_notes": {"type": "string"},
     "focus": {"type": ["string", "null"]},
