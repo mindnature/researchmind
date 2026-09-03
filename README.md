@@ -1,19 +1,17 @@
 # ResearchMind
 
-> 安装一次，输入一个学者名字，把公开科研材料蒸馏成一个可回源、能帮你做科研判断的专家 Skill。
+> 安装一次，输入一个学者名字，把公开科研材料蒸馏成一个可回源、能区分“通用学术规范”和“学者特异性判断”的 Research Advisor Skill。
 
-ResearchMind 是一个通用型科研蒸馏 Skill。它不是论文摘要器，也不是“名人数字分身”。它要做的是从论文、研究笔记、手稿、通信、访谈、口述史、团队记录和失败案例中重建 Research Decision Episodes，再从正反案例中提炼具有边界条件的 Research Heuristics。
+ResearchMind 是一个通用型科研思维蒸馏 Skill。它不是论文摘要器，也不是“名人数字分身”。它从论文、研究笔记、手稿、通信、访谈、口述史、团队记录和失败案例中重建 Research Decision Episodes，再通过正反案例和人物特异性检验提炼 Research Heuristics。
 
 ## 安装后怎么用
-
-在 Codex / 支持 Skill 的 Agent 中安装仓库根目录：
 
 ```text
 使用 $skill-installer 安装：
 https://github.com/mindnature/researchmind
 ```
 
-然后可以只输入一个名字：
+然后只输入一个名字即可：
 
 ```text
 $researchmind 蒸馏 Geoffrey Hinton
@@ -23,13 +21,8 @@ $researchmind 蒸馏 Geoffrey Hinton
 
 ```text
 $researchmind 蒸馏丹尼尔·卡尼曼，重点研究他如何设计实验和处理反例
-```
-
-```text
 $researchmind 蒸馏屠呦呦，使用 deep 模式
 ```
-
-如果你已经有论文、手稿、访谈、课程转写或本地档案，也可以直接一起提供。
 
 ## ResearchMind 会自动做什么
 
@@ -38,97 +31,156 @@ $researchmind 蒸馏屠呦呦，使用 deep 模式
    ↓
 身份确认与同名消歧
    ↓
-建立 scholar profile
+Scholar Profile + Distillation Grade
    ↓
 自动发现论文 / 档案 / 手稿 / 通信 / 访谈 / 口述史 / 科学史资料
    ↓
-建立可回源 Source Registry
+Source Registry：区分 discovered / inspected / claim-bearing
    ↓
-扫描研究生涯中的关键科研决策事件
+扫描关键科研决策事件
    ↓
-重建 Research Episodes
+Research Episodes + Episode Type Gate
    ↓
 Temporal Firewall + Team Attribution
    ↓
-寻找成功 × 失败 × 转向 × 边界案例
+成功 × 失败 × 转向 × 边界案例
    ↓
 Contrastive Distillation
    ↓
-提炼 Research Heuristics
+Research Heuristics
    ↓
-Transfer Validator + Evaluation
+Scholar Specificity Gate
+   ↓
+Generic Baseline A/B + Framework Contamination 检测
+   ↓
+Transfer Validator
    ↓
 生成 <scholar>-research-advisor Skill
 ```
 
-## 它蒸馏的不是“名言”，而是科研动作
+## v0.4 解决什么问题
 
-普通人物总结容易得到：
+前一版已经证明“输入人物 → 自动找源 → Episodes → Heuristics → 独立 Advisor”可以跑通。但真实测试暴露了一个更深的问题：一个高水平 AI 很容易把通用科研常识或目标学科的审稿规范，重新贴上“大师 heuristic”的标签。
 
-> 这个科学家很有好奇心、坚持、第一性原理思维。
+ResearchMind v0.4 把这个风险定义为：
 
-ResearchMind 要得到的是类似：
+> **Heuristic Laundering — 启发式贴标签 / 洗白。**
 
-> 当全局解释自由度很高时，先列出不确定性显著更低、且有独立证据支持的局部约束；只在这些约束内生成候选模型。若候选模型持续违反硬约束，优先更换模型拓扑，而不是继续增加自由参数。
+例如：DID 平行趋势、问卷信效度、空间计量样本单元等，本质上属于社会科学 `DOMAIN_BASELINE`，不能因为当前调用的是“姚期智科研顾问”，就硬挂到姚期智 heuristic 下面。
 
-这种规则才能被用于新的选题、假设、研究设计和异常结果判断。
+因此 v0.4 新增四个核心机制。
 
-## 四种蒸馏深度
+### 1. Scholar Specificity Gate
 
-### quick
+每条 heuristic 必须检查：
 
-适合先判断一个学者值不值得深挖。
+- `generic_baseline_overlap`
+- `scholar_specificity`
+- `framework_contamination`
+- `scholar_added_delta`
+- `specificity_evidence`
 
-- 5–10 个高质量来源
-- 至少 3 个 Episode
-- 1–3 条 candidate / provisional heuristic
+`validated` heuristic 必须通过 specificity gate。
 
-### standard（默认）
+如果把学者名字删掉后，一个普通高水平科研 Agent 仍会给出几乎相同的规则，则这条规则不能宣传成“该学者的独特科研思维”。
 
-适合大多数科研人物。
+详见 `references/scholar-specificity.md`。
 
-- 20–40 个关键来源
-- 5–10 个 Episode
-- 3–7 条 heuristic
-- 主动寻找至少 2 组支持/反例结构
+### 2. 三层 Advisor
 
-### deep
+真实科研评审强制拆成：
 
-加入论文之外的过程证据：档案、通信、草稿、团队材料、失败史和方法转向。
+#### `DOMAIN_BASELINE`
 
-### golden
+目标领域的普通专业规范。与大师无关。
 
-逐条核验关键页码、档案号、时间码和一手科研过程材料。适合精品开源、方法学研究和高可信科研判断。
+#### `SCHOLAR_LENS`
 
-## 不是每个学者都能蒸馏到同样深度
+只调用通过 Scholar Specificity Gate 的学者特异性 heuristic，并说明其 `scholar-added delta`。
 
-ResearchMind 会标记 `source_availability_ceiling`：
+#### `TRANSFER_INFERENCE`
 
-- `publication_only`：主要只有论文。
-- `public_retrospective`：论文 + 本人访谈/演讲。
-- `process_evidence`：存在笔记、手稿、通信、草稿等过程材料。
-- `golden_archive`：核心 Episode 有直接过程证据、团队材料和反例，可做高置信蒸馏。
+解释为什么该学者的决策结构可以或不可以迁移到当前问题。低置信迁移只能作为问题生成器，不直接给建议。
 
-“通用”意味着可以从任何可识别学者开始，不意味着所有人都能被高置信还原。
+详见 `references/advisor-three-layer.md`。
+
+### 3. Distillation Grade
+
+`depth` 是用户想做多深，`distillation_grade` 是证据实际允许蒸馏多深。
+
+- `A_archival`：档案级，核心 Episode 有充分同期过程证据。
+- `B_process_informed`：过程证据级，部分同期材料能约束重建。
+- `C_retrospective`：公开回顾级，以论文 + 本人访谈/演讲为主。
+- `D_publication_based`：成果轨迹级，主要只有正式论文和公开元数据。
+
+每位学者还记录 evidence profile：过程证据覆盖、论文覆盖、本人回顾覆盖、第三方依赖、微观决策重建能力等。
+
+详见 `references/distillation-grade.md`。
+
+### 4. Transactional Staging
+
+为避免 Agent 多次写文件时出现“manifest 写进去了、Episode 丢了几个”的半成品状态，v0.4 增加事务式 staging：
+
+```text
+.researchmind/staging/<job-id>/
+   ↓
+结构校验
+   ↓
+epistemic consistency validation
+   ↓
+全部通过
+   ↓
+atomic commit
+   ↓
+data/<scholar>/
+```
+
+单个 JSON 写入也使用临时文件 + `os.replace`。
+
+详见 `references/transactional-pipeline.md`。
+
+## Episode Type Gate
+
+不是所有“人生大事件”都能用于蒸馏科研判断。
+
+可直接参与科研 heuristic 的 Episode：
+
+- `scientific_decision`
+- `problem_framing`
+- `method_choice`
+- `anomaly_response`
+- `theory_revision`
+
+以下默认不能直接生成科研 heuristic：
+
+- `career_decision`
+- `research_program_strategy`
+- `institution_building`
+- `field_outcome`
+
+这样可以避免把“回国办班”“建立研究院”“某领域几十年后终于工程化”等事件，硬当成某位学者的微观科研决策证据。
 
 ## 证据纪律
 
-每个关键判断必须属于以下之一：
+每个关键判断必须属于：
 
-- `DIRECT_EVIDENCE`：来源直接支持。
-- `CROSS_SOURCE_SYNTHESIS`：多来源综合，不能伪装成学者原话。
-- `TRANSFER_INFERENCE`：把启发式迁移到你的新科研问题。
-- `INSUFFICIENT_EVIDENCE`：资料不足，停止补全。
+- `DIRECT_EVIDENCE`
+- `CROSS_SOURCE_SYNTHESIS`
+- `TRANSFER_INFERENCE`
+- `INSUFFICIENT_EVIDENCE`
 
 同时强制执行：
 
-- Temporal Firewall：不能用后来知道的正确答案解释早期决定。
-- Team Attribution：不能把团队科研神化成一个人的行为。
-- Contrastive Distillation：高手成功和翻车都要研究。
-- Transfer Validator：跨学科只能迁移决策结构，不能做漂亮类比。
-- Abstention：材料不够时必须拒绝代替学者“发言”。
+- Temporal Firewall
+- Team Attribution
+- Contrastive Distillation
+- Scholar Specificity Gate
+- Transfer Validator
+- Abstention
 
-## 通用数据结构
+结构校验通过不等于历史事实已经正确。年份、术语、原文、人物归属和因果链仍必须由 Agent 打开原始来源核验。
+
+## 数据结构
 
 ```text
 data/<scholar-slug>/
@@ -141,7 +193,7 @@ data/<scholar-slug>/
 └── PRIMARY_SOURCE_QUEUE.md
 ```
 
-最终人物专家：
+生成的独立人物顾问：
 
 ```text
 generated/<scholar-slug>-research-advisor/
@@ -154,39 +206,34 @@ generated/<scholar-slug>-research-advisor/
 
 ## CLI
 
-ResearchMind 的 CLI 只负责脚手架、结构校验和打包；来源搜索与学术判断由安装了 Skill 的 Agent 按 `SKILL.md` 执行。
-
-初始化任意学者：
+初始化：
 
 ```bash
 python scripts/researchmind.py init-scholar "Geoffrey Hinton" --depth standard
 ```
 
-中文姓名也支持；如需可读英文目录名，可显式指定 slug：
+复杂任务推荐事务式流程：
 
 ```bash
-python scripts/researchmind.py init-scholar "屠呦呦" --slug tu-youyou --depth deep
-```
-
-查看已经初始化的人物：
-
-```bash
-python scripts/researchmind.py list-scholars
+python scripts/researchmind.py stage-scholar "Geoffrey Hinton"
+python scripts/researchmind.py commit-staged --job-id <job-id> --scholar geoffrey-hinton
 ```
 
 校验：
 
 ```bash
 python scripts/researchmind.py validate
-python scripts/researchmind.py validate --scholar pauling
+python scripts/researchmind.py epistemic-validate
+python scripts/researchmind.py epistemic-validate --scholar pauling
 ```
 
 统计：
 
 ```bash
-python scripts/researchmind.py stats
 python scripts/researchmind.py stats --scholar pauling
 ```
+
+统计会分别显示 discovered / inspected / claim-bearing sources，以及 specificity gate 状态。
 
 生成独立人物 Skill：
 
@@ -200,38 +247,36 @@ python scripts/researchmind.py build-skill --scholar pauling
 python -m unittest discover -s tests -v
 ```
 
-仓库包含 GitHub Actions CI，用于自动运行结构校验、单元测试和参考人物 Skill 打包测试。
+## Evaluation
+
+v0.4 的评测不仅看“像不像大师”，而是加入：
+
+- historical reconstruction
+- counterexample detection
+- cross-domain transfer
+- abstention
+- Generic Baseline A/B
+- Heuristic Laundering Test
+- Framework Contamination Test
+- Three-Layer Separation Test
+
+真正的成功标准是：
+
+> 这个 Scholar Advisor 是否提供了可回源、可区分、超出 generic baseline 的科研判断增量。
 
 ## Pauling Golden Set
 
-`data/pauling/` 现在只是 ResearchMind 的第一个高质量参考样例，不再是代码特例。
-
-当前已建立：
-
-- α-螺旋结构建模 Episode
-- 镰状细胞贫血分子病 Episode
-- DNA 三螺旋失败 Episode
-- `Hard-constraint-first model reduction` 正反案例启发式
-- Primary Source Queue
-
-这套样例用于验证 ResearchMind 的方法，而不是限制 ResearchMind 只能蒸馏 Pauling。
-
-## 通用执行协议
-
-- `SKILL.md`：Agent 主入口
-- `references/universal-distillation.md`：从人名到人物 Skill 的完整流程
-- `references/source-discovery.md`：自动学术资料发现协议
-- `schemas/scholar_profile.schema.json`：人物档案 Schema
-- `schemas/episode.schema.json`：科研决策 Episode
-- `schemas/heuristic.schema.json`：科研启发式
+`data/pauling/` 是当前第一个方法学参考样例。其 Distillation Grade 目前为 `B_process_informed`：已有较丰富档案与过程证据，但部分关键 contemporaneous objects 仍在 Primary Source Queue 中，因此没有为了“看起来成熟”而把 heuristic 强行升级成 validated。
 
 ## 项目状态
 
-`v0.3.0-universal-scholar-distiller`
+`v0.4.0-scholar-specificity-evidence-reliability`
 
-当前版本已经完成“Pauling 原型 → 通用人物蒸馏框架”的工程解耦：核心 Skill 接受任意学者名字，数据目录按 scholar 隔离，CLI 支持初始化任意学者并生成独立科研顾问 Skill。
+当前重点不再是快速扩充更多科学家，而是解决三个更关键的问题：
 
-下一阶段重点是用第二位、第三位学者做真实 end-to-end 测试，检验通用流程在不同学科和不同档案可得性条件下是否稳定。
+1. 如何证明一条 heuristic 真正具有 Scholar Specificity；
+2. 如何把通用领域审稿规范与大师认知透镜分开；
+3. 如何让蒸馏数据在跨 Agent / 多工具写入时保持事务一致性。
 
 ## License
 
