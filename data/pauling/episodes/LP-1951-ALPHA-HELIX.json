@@ -2,6 +2,7 @@
   "episode_id": "LP-1951-ALPHA-HELIX",
   "scientist": "Linus Pauling",
   "title": "Alpha-helix structural modeling",
+  "episode_type": "scientific_decision",
   "decision_date": "1948-1951",
   "research_question": "What polypeptide-chain configurations satisfy the best-established local chemical geometry and hydrogen-bonding constraints?",
   "context": "A structural chemistry program developed by Pauling and collaborators over many years, with a key paper-modeling episode in Oxford in March 1948 and formal publication with Robert B. Corey and H. R. Branson in 1951.",
@@ -46,5 +47,5 @@
   ],
   "evidence_strength": "medium",
   "needs_primary_source_review": true,
-  "notes": "Golden Set v0.2: the primary 1951 publication and Pauling's 10 May 1984 Caltech oral history are now inspected, and the 5.1/5.4 A discrepancy is anchored in OSU archival synthesis. Still requires direct inspection of contemporaneous 1948 notes/drawings/correspondence before upgrading to high confidence."
+  "notes": "Golden Set v0.4: classified as a scientific decision Episode; key contemporaneous 1948 notes/drawings/correspondence still require direct inspection."
 }
