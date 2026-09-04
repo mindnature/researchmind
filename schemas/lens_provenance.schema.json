@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Active Lens Provenance Packet",
+  "type": "object",
+  "required": [
+    "scholar", "heuristic_id", "rule", "lens_family", "scholar_added_delta",
+    "supporting_and_counter_episodes", "source_locators", "composition_audit"
+  ],
+  "properties": {
+    "scholar": {"type": "string"},
+    "heuristic_id": {"type": "string"},
+    "rule": {"type": "string"},
+    "lens_family": {"type": ["string", "null"]},
+    "scholar_added_delta": {"type": "string"},
+    "supporting_and_counter_episodes": {"type": "array", "items": {"type": "object"}},
+    "source_locators": {"type": "array", "items": {"type": "object"}},
+    "composition_audit": {"type": ["object", "null"]}
+  },
+  "additionalProperties": true
+}
