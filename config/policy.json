@@ -68,6 +68,7 @@
   "active_lens_provenance": {
     "minimum_supporting_episodes": 2,
     "require_source_locators": true,
+    "require_inspected_source": true,
     "require_scholar_added_delta": true,
     "require_composition_audit": true
   },
