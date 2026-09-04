@@ -65,11 +65,7 @@ def transfer_action(confidence: str, policy: dict | None = None, root: Path = RO
 
 
 def composition_audit_result(heuristic: dict, policy: dict | None = None, root: Path = ROOT) -> dict:
-    """Detect the most common composite-heuristic fabrication failure mode.
-
-    An active scholar lens needs evidence that the combined decision structure appeared as a
-    combined operation in the scholar corpus, not merely that each component appeared somewhere.
-    """
+    """Detect the most common composite-heuristic fabrication failure mode."""
     policy = policy or load_policy(root)
     audit = heuristic.get("composition_audit")
     if not audit:
@@ -109,7 +105,9 @@ def build_lens_provenance_packet(slug: str, heuristic_id: str, root: Path = ROOT
         for ep in [load_json(p) for p in sorted((base / "episodes").glob("*.json"))]
     }
     sources = {s["source_id"]: s for s in load_json(base / "source_registry.json")}
-    episode_ids = heuristic.get("supporting_episodes", []) + heuristic.get("counter_episodes", [])
+    support_ids = set(heuristic.get("supporting_episodes", []))
+    counter_ids = set(heuristic.get("counter_episodes", []))
+    episode_ids = list(support_ids) + [eid for eid in counter_ids if eid not in support_ids]
 
     episode_packets = []
     source_packets = {}
@@ -117,8 +115,10 @@ def build_lens_provenance_packet(slug: str, heuristic_id: str, root: Path = ROOT
         ep = episodes.get(eid)
         if not ep:
             continue
+        role = "support" if eid in support_ids else "counter"
         episode_packets.append({
             "episode_id": eid,
+            "role": role,
             "title": ep.get("title"),
             "episode_type": ep.get("episode_type"),
             "decision_action": ep.get("decision_action"),
@@ -153,11 +153,16 @@ def validate_active_lens_provenance(packet: dict, policy: dict | None = None, ro
     cfg = policy["active_lens_provenance"]
     errors: list[str] = []
     episodes = packet.get("supporting_and_counter_episodes", [])
-    supporting_count = sum(1 for ep in episodes if ep.get("episode_id"))
+    supporting_count = sum(1 for ep in episodes if ep.get("role") == "support")
     if supporting_count < int(cfg["minimum_supporting_episodes"]):
-        errors.append("insufficient episode support for strong scholar lens")
-    if cfg.get("require_source_locators") and not any(s.get("stable_locator") for s in packet.get("source_locators", [])):
+        errors.append("insufficient supporting Episode count for strong scholar lens")
+    sources = packet.get("source_locators", [])
+    if cfg.get("require_source_locators") and not any(s.get("stable_locator") for s in sources):
         errors.append("active lens has no stable source locator")
+    if cfg.get("require_inspected_source") and not any(
+        s.get("inspection_status") == "inspected" and s.get("stable_locator") for s in sources
+    ):
+        errors.append("active lens has no inspected source with stable locator")
     if cfg.get("require_scholar_added_delta") and not packet.get("scholar_added_delta"):
         errors.append("active lens has no scholar-added delta")
     if cfg.get("require_composition_audit") and not packet.get("composition_audit"):
