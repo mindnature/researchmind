@@ -1,5 +1,5 @@
 {
-  "version": "0.5",
+  "version": "0.6",
   "default_lens_family": "scientific_judgment",
   "lens_families": {
     "scientific_judgment": {
@@ -36,6 +36,44 @@
     "experimental_lens": {"destination": "experimental_lens"},
     "generic_absorbed": {"destination": "domain_baseline_candidate"},
     "excluded": {"destination": "excluded"}
+  },
+  "scholar_task_fit": {
+    "weights": {
+      "domain_fit": 0.20,
+      "decision_structure_fit": 0.30,
+      "evidence_fit": 0.25,
+      "added_value_fit": 0.25
+    },
+    "thresholds": {
+      "active": 75,
+      "experimental": 50
+    },
+    "activation": {
+      "active": "active_lens_allowed",
+      "experimental": "experimental_only",
+      "abstain": "scholar_lens_abstain"
+    },
+    "cross_domain_rule": {
+      "domain_fit_below": 40,
+      "unless_decision_structure_fit_at_least": 80,
+      "maximum_activation": "experimental"
+    }
+  },
+  "transfer_policy": {
+    "high": "recommendation_allowed",
+    "medium": "diagnostic_only",
+    "low": "question_generation_only",
+    "reject": "abstain"
+  },
+  "active_lens_provenance": {
+    "minimum_supporting_episodes": 2,
+    "require_source_locators": true,
+    "require_scholar_added_delta": true,
+    "require_composition_audit": true
+  },
+  "composite_heuristic": {
+    "high_risk_action": "experimental_lens",
+    "missing_audit_action": "experimental_lens"
   },
   "auto_modes": {
     "fast-auto": {"depth": "quick"},
