@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Scholar Task Fit Assessment",
+  "type": "object",
+  "required": [
+    "scholar", "task", "target_domain", "domain_fit", "decision_structure_fit",
+    "evidence_fit", "added_value_fit", "rationale"
+  ],
+  "properties": {
+    "scholar": {"type": "string"},
+    "task": {"type": "string"},
+    "target_domain": {"type": "string"},
+    "domain_fit": {"type": "number", "minimum": 0, "maximum": 100},
+    "decision_structure_fit": {"type": "number", "minimum": 0, "maximum": 100},
+    "evidence_fit": {"type": "number", "minimum": 0, "maximum": 100},
+    "added_value_fit": {"type": "number", "minimum": 0, "maximum": 100},
+    "rationale": {"type": "string"},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}
