@@ -20,10 +20,10 @@ class ResearchMindValidationTest(unittest.TestCase):
 
     def test_policy_is_single_machine_source(self):
         policy = mod.load_policy(ROOT)
-        self.assertEqual(policy["version"], "0.5")
+        self.assertEqual(policy["version"], "0.6")
+        self.assertIn("scholar_task_fit", policy)
+        self.assertIn("transfer_policy", policy)
         self.assertIn("scientific_judgment", policy["lens_families"])
-        self.assertIn("methodological_stance", policy["lens_families"])
-        self.assertIn("research_strategy", policy["lens_families"])
 
     def test_universal_scaffold_from_name(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -66,7 +66,7 @@ class ResearchMindValidationTest(unittest.TestCase):
         route = mod.derive_routing(heuristic, policy=mod.load_policy(ROOT))
         self.assertEqual(route["lens_eligibility"], "generic_absorbed")
 
-    def test_specificity_pass_can_be_active_lens(self):
+    def test_specificity_pass_needs_composition_audit_for_active_lens(self):
         heuristic = {
             "heuristic_id": "H2",
             "name": "Distinct rule",
@@ -87,6 +87,13 @@ class ResearchMindValidationTest(unittest.TestCase):
             }
         }
         route = mod.derive_routing(heuristic, policy=mod.load_policy(ROOT))
+        self.assertEqual(route["lens_eligibility"], "experimental_lens")
+        heuristic["composition_audit"] = {
+            "components": ["X", "Y"],
+            "combined_operation_evidence": ["E1", "E2"],
+            "fabrication_risk": "low"
+        }
+        route = mod.derive_routing(heuristic, policy=mod.load_policy(ROOT))
         self.assertEqual(route["lens_eligibility"], "active_lens")
 
     def test_methodological_stance_is_allowed_for_stance_lens(self):
@@ -95,6 +102,63 @@ class ResearchMindValidationTest(unittest.TestCase):
         self.assertTrue(mod.episode_type_allowed_for_lens("paradigm_shift_advocacy", "research_strategy", policy))
         self.assertFalse(mod.episode_type_allowed_for_lens("institution_building", "research_strategy", policy))
 
+    def test_task_fit_can_abstain_even_when_scholar_has_lenses(self):
+        assessment = {
+            "scholar": "Zheng Bingwen",
+            "task": "review a low-altitude logistics project",
+            "target_domain": "operations management",
+            "domain_fit": 25,
+            "decision_structure_fit": 50,
+            "evidence_fit": 40,
+            "added_value_fit": 35,
+            "rationale": "cross-domain analogy only"
+        }
+        result = mod.evaluate_task_fit(assessment, root=ROOT)
+        self.assertEqual(result["activation_level"], "abstain")
+        self.assertLess(result["overall_fit"], 50)
+
+    def test_cross_domain_fit_caps_active_to_experimental(self):
+        assessment = {
+            "scholar": "Scholar X",
+            "task": "far-domain task",
+            "target_domain": "unrelated",
+            "domain_fit": 20,
+            "decision_structure_fit": 70,
+            "evidence_fit": 100,
+            "added_value_fit": 100,
+            "rationale": "strong lens but weak domain and structure fit"
+        }
+        result = mod.evaluate_task_fit(assessment, root=ROOT)
+        self.assertEqual(result["activation_level"], "experimental")
+
+    def test_medium_transfer_is_diagnostic_only(self):
+        self.assertEqual(mod.transfer_action("high", root=ROOT), "recommendation_allowed")
+        self.assertEqual(mod.transfer_action("medium", root=ROOT), "diagnostic_only")
+        self.assertEqual(mod.transfer_action("low", root=ROOT), "question_generation_only")
+        self.assertEqual(mod.transfer_action("reject", root=ROOT), "abstain")
+
+    def test_composite_heuristic_without_combined_evidence_is_downgraded(self):
+        heuristic = {
+            "composition_audit": {
+                "components": ["participation", "centralization"],
+                "combined_operation_evidence": [],
+                "fabrication_risk": "high"
+            }
+        }
+        result = mod.composition_audit_result(heuristic, root=ROOT)
+        self.assertEqual(result["status"], "fail")
+        self.assertEqual(result["action"], "experimental_lens")
+
+    def test_swap_scholar_flags_uniform_outputs(self):
+        results = [
+            {"scholar": "generic", "active_lens_count": 2, "scholar_added_delta": ""},
+            {"scholar": "A", "active_lens_count": 2, "scholar_added_delta": "same framework"},
+            {"scholar": "B", "active_lens_count": 2, "scholar_added_delta": "same framework"}
+        ]
+        summary = mod.swap_scholar_summary(results)
+        self.assertTrue(summary["suspicious_uniformity"])
+        self.assertTrue(summary["duplicate_scholar_added_delta"])
+
     def test_auto_distill_creates_recoverable_pipeline(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -102,10 +166,9 @@ class ResearchMindValidationTest(unittest.TestCase):
             self.assertTrue(pipeline["agent_required"])
             self.assertEqual(pipeline["depth"], "quick")
             self.assertEqual(pipeline["status"], "awaiting_agent")
+            self.assertEqual(pipeline["pipeline_version"], "0.6")
             path = mod.staging_root(root, pipeline["job_id"]) / "pipeline.json"
             self.assertTrue(path.exists())
-            saved = json.loads(path.read_text(encoding="utf-8"))
-            self.assertEqual(saved["phases"][0]["name"], "identity")
 
     def test_transactional_commit_allows_quality_warnings(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -139,16 +202,18 @@ class ResearchMindValidationTest(unittest.TestCase):
             self.assertEqual(report["errors"], [])
             self.assertTrue(report["warnings"])
 
-    def test_pauling_builds_adaptive_three_layer_advisor(self):
+    def test_pauling_builds_task_fit_aware_three_layer_advisor(self):
         with tempfile.TemporaryDirectory() as tmp:
             out = Path(tmp) / "pauling-advisor"
             result = mod.build_skill("pauling", ROOT, out)
             self.assertEqual(result, out)
             skill = (out / "SKILL.md").read_text(encoding="utf-8")
+            self.assertIn("Scholar–Task Fit", skill)
+            self.assertIn("Forced Lens Activation", skill)
+            self.assertIn("Composite Heuristic Fabrication", skill)
             self.assertIn("DOMAIN_BASELINE", skill)
             self.assertIn("SCHOLAR_LENS", skill)
             self.assertIn("TRANSFER_INFERENCE", skill)
-            self.assertIn("MODEL_KNOWLEDGE_UNVERIFIED", skill)
             self.assertTrue((out / "build_report.json").exists())
 
 

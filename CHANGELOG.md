@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.6.0-scholar-task-fit-lens-abstention
+
+- Added `Scholar–Task Fit Gate` as a dynamic, per-task activation layer separate from scholar specificity.
+- Added four task-fit dimensions: `domain_fit`, `decision_structure_fit`, `evidence_fit`, and `added_value_fit`.
+- Added weighted machine thresholds for `active`, `experimental`, and `abstain` outcomes in `config/policy.json`.
+- Added a cross-domain cap that prevents low-domain-fit tasks from receiving strong scholar recommendations without exceptional structural fit.
+- Added strict transfer actions: `high → recommendation`, `medium → diagnostic only`, `low → question generation only`, `reject → abstain`.
+- Added `Active Lens Provenance Packet` generation and validation.
+- Added `Composite Heuristic Fabrication Check`; true components can no longer be silently combined into a scholar-owned framework without evidence of the combined operation.
+- Active-lens build output now downgrades provenance-incomplete lenses to experimental rather than presenting them as strong scholar advice.
+- Added `Forced Lens Activation` safeguard: being explicitly asked to use a scholar is not evidence that the scholar is relevant.
+- Added `Swap-Scholar Evaluation` to detect suspiciously uniform lens density or identical scholar-added deltas across different scholars.
+- Added CLI commands: `task-fit`, `lens-provenance`, `transfer-action`, and `swap-scholar-eval`.
+- Added `runtime/taskfit.py`, `schemas/task_fit.schema.json`, and `schemas/lens_provenance.schema.json`.
+- Added `references/scholar-task-fit.md`.
+- Updated generated Advisor Skill contract to run Scholar–Task Fit before strong lens activation and to treat abstention as a successful outcome.
+- Added unit tests for task-fit abstention, cross-domain capping, medium-transfer restrictions, composite-heuristic downgrade, and Swap-Scholar detection.
+
 ## 0.5.0-adaptive-distillation-auto-orchestration
 
 - Replaced hard scholar-specificity blocking with adaptive soft routing.

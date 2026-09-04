@@ -67,6 +67,17 @@ def derive_routing(heuristic: dict, episodes: dict[str, dict] | None = None, pol
             eligibility = "experimental_lens"
             reason = "episode-type mismatch for lens family: " + ", ".join(incompatible)
 
+    # v0.6: a strong scholar lens cannot be created by merely combining individually true
+    # components. The corpus must show that the combined decision structure itself occurred.
+    if eligibility == "active_lens":
+        audit = heuristic.get("composition_audit")
+        if not audit:
+            eligibility = policy.get("composite_heuristic", {}).get("missing_audit_action", "experimental_lens")
+            reason = "composition audit missing; combined heuristic ownership is unverified"
+        elif audit.get("fabrication_risk") == "high" or not audit.get("combined_operation_evidence"):
+            eligibility = policy.get("composite_heuristic", {}).get("high_risk_action", "experimental_lens")
+            reason = "composite heuristic fabrication risk: combined operation not demonstrated"
+
     destination = policy.get("routing", {}).get(eligibility, {}).get("destination", eligibility)
     return {
         "lens_eligibility": eligibility,

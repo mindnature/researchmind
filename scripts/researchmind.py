@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""ResearchMind CLI — v0.5 adaptive distillation runtime."""
+"""ResearchMind CLI — v0.6 scholar-task fit and lens abstention runtime."""
 from __future__ import annotations
 
 import argparse
@@ -14,6 +14,7 @@ if str(REPO_ROOT) not in sys.path:
 from runtime.core import *  # noqa: F401,F403
 from runtime.pipeline import *  # noqa: F401,F403
 from runtime.policy import *  # noqa: F401,F403
+from runtime.taskfit import *  # noqa: F401,F403
 
 
 def _print_quality(report: dict) -> int:
@@ -72,6 +73,19 @@ def main() -> int:
     p_route = sub.add_parser("route-heuristics")
     p_route.add_argument("--scholar", required=True)
 
+    p_fit = sub.add_parser("task-fit")
+    p_fit.add_argument("--input", required=True, help="JSON Scholar-Task Fit assessment")
+
+    p_prov = sub.add_parser("lens-provenance")
+    p_prov.add_argument("--scholar", required=True)
+    p_prov.add_argument("--heuristic", required=True)
+
+    p_transfer = sub.add_parser("transfer-action")
+    p_transfer.add_argument("confidence", choices=["high", "medium", "low", "reject"])
+
+    p_swap = sub.add_parser("swap-scholar-eval")
+    p_swap.add_argument("--input", required=True, help="JSON array of same-task scholar results")
+
     p_stats = sub.add_parser("stats")
     p_stats.add_argument("--scholar")
 
@@ -119,6 +133,21 @@ def main() -> int:
         if args.cmd == "route-heuristics":
             print(json.dumps({"changed": apply_soft_routing(args.scholar, ROOT)}, ensure_ascii=False))
             return 0
+        if args.cmd == "task-fit":
+            assessment = json.loads(Path(args.input).read_text(encoding="utf-8"))
+            print(json.dumps(evaluate_task_fit(assessment, root=ROOT), ensure_ascii=False, indent=2))
+            return 0
+        if args.cmd == "lens-provenance":
+            packet = build_lens_provenance_packet(args.scholar, args.heuristic, ROOT)
+            print(json.dumps({"packet": packet, "errors": validate_active_lens_provenance(packet, root=ROOT)}, ensure_ascii=False, indent=2))
+            return 0
+        if args.cmd == "transfer-action":
+            print(transfer_action(args.confidence, root=ROOT))
+            return 0
+        if args.cmd == "swap-scholar-eval":
+            results = json.loads(Path(args.input).read_text(encoding="utf-8"))
+            print(json.dumps(swap_scholar_summary(results), ensure_ascii=False, indent=2))
+            return 0
         if args.cmd == "stats":
             print(json.dumps(stats(ROOT, args.scholar), ensure_ascii=False, indent=2))
             return 0
@@ -129,7 +158,7 @@ def main() -> int:
         if args.cmd == "list-scholars":
             print("\n".join(discover_scholar_slugs(ROOT)))
             return 0
-    except (ValueError, FileNotFoundError, FileExistsError) as exc:
+    except (ValueError, FileNotFoundError, FileExistsError, json.JSONDecodeError) as exc:
         print(str(exc), file=sys.stderr)
         return 1
     return 2

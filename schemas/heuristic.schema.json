@@ -40,6 +40,17 @@
       },
       "additionalProperties": true
     },
+    "composition_audit": {
+      "type": "object",
+      "properties": {
+        "components": {"type": "array", "items": {"type": "string"}},
+        "combined_operation_evidence": {"type": "array", "items": {"type": "string"}},
+        "fabrication_risk": {"enum": ["low", "medium", "high", "unknown"]},
+        "alternative_interpretation": {"type": "string"},
+        "notes": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
     "routing": {
       "type": "object",
       "properties": {
